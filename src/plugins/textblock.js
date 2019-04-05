@@ -18,7 +18,11 @@ const textBlock = {
                 model: "text",
                 required: true,
                 placeholder: "Write your text here",
-                rows: 4
+                rows: 4,
+                html: true,
+                options: {
+                    theme: 'snow'
+                }
             }
         ]
     },

@@ -140,6 +140,11 @@ export default class HyperEditor {
     }
 
     register_block(name, block) {
+        console.warn('"register_block" is deprecated and will be removed. Please use "registerBlock" instead')
+        this.registerBlock(name, block)
+    }
+
+    registerBlock(name, block) {
         this.pm.register(name, block)
     }
 }

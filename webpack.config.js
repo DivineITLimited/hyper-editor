@@ -1,40 +1,46 @@
 var path = require('path')
 var webpack = require('webpack')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   entry: './src/hyper.js',
   output: {
     library: 'HyperEditor',
+    libraryExport: 'default',
     libraryTarget: 'umd',
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'build.js'
+    filename: 'hyper.js'
   },
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: [
-          'vue-style-loader',
-          'css-loader'
-        ],
+        use: ExtractTextPlugin.extract({
+          fallback: 'vue-style-loader',
+          use: ['css-loader']
+        })
       },
       {
         test: /\.scss$/,
-        use: [
-          'vue-style-loader',
-          'css-loader',
-          'sass-loader'
-        ],
+        use: ExtractTextPlugin.extract({
+          fallback: 'vue-style-loader',
+          use: [
+            'css-loader',
+            'sass-loader'
+          ]
+        }),
       },
       {
         test: /\.sass$/,
-        use: [
-          'vue-style-loader',
-          'css-loader',
-          'sass-loader?indentedSyntax'
-        ],
+        use:ExtractTextPlugin.extract({
+          fallback: 'vue-style-loader',
+          use: [
+            'css-loader',
+            'sass-loader?indentedSyntax'
+          ]
+        }),
       },
       {
         test: /\.vue$/,
@@ -72,6 +78,9 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    new ExtractTextPlugin("hyper.css"),
+  ],
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js'

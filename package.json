@@ -10,14 +10,13 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
-    "bootstrap-vue": "^2.0.0-rc.16",
+    "bootstrap-vue": "^2.0.0-rc.11",
     "deepmerge": "^2.1.1",
     "feather-icons": "^4.7.3",
     "vue": "^2.5.11",
     "vue-codemirror": "^4.0.5",
     "vue-color": "^2.4.6",
     "vue-form-generator": "^2.2.2",
-    "vue-quill-editor": "^3.0.6",
     "vuedraggable": "^2.16.0",
     "vuex": "^3.0.1"
   },
@@ -33,8 +32,9 @@
     "babel-preset-stage-3": "^6.24.1",
     "cross-env": "^5.0.5",
     "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.4",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",
     "vue-loader": "^13.0.5",
     "vue-template-compiler": "^2.4.4",

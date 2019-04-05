@@ -3,16 +3,20 @@
   <head>
     <meta charset="utf-8">
     <title>Hyper Editor</title>
+    <link rel="stylesheet" href="/dist/hyper.css" />
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet" />
   </head>
   <body>
     <div id="hyperEditor"></div>
-    <script src="/dist/build.js"></script>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+    <script src="/dist/hyper.js"></script>
     <script>
       function preview(value, callback) {
         callback('global preview function')
       }
       document.addEventListener('DOMContentLoaded', function(){
-        hyperEditor = new HyperEditor.default('#hyperEditor', {
+        hyperEditor = new HyperEditor('#hyperEditor', {
           imageSearchApi: 'http://localhost:8000/hyper-editor/api/images/',
          // preview: preview,
           blocks: {
@@ -34,7 +38,7 @@
         })
 
 
-        hyperEditor.register_block('imageChooser2', {
+        hyperEditor.registerBlock('imageChooser2', {
           title: 'Image 2',
           description: 'A simple image block.',
           default_values: {
