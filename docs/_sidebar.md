@@ -6,6 +6,8 @@
     * [Installation](installation.md)
     * [Basic Usage](basic_usage.md)
     * [Blocks](blocks.md)
+    * [Extra Form Fields](custom_form_fields.md)
+    * [Backend Integrations](backend.md)
 
 
 <a href="https://divineit.net" style="color:#36a7e3 !important; text-decoration:none">
