@@ -3,4 +3,7 @@
 * Getting Started
 
     * [Introduction](/)
-    * [Quick Start](quickstart.md)
+    * [Installation](installation.md)
+    * [Basic Usage](basic_usage.md)
+
+[![Divine IT Limited](https://www.divineit.net/media/Divine-IT-Logo.png)](https://www.divineit.net/)
