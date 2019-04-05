@@ -1,6 +1,6 @@
 # Hyper Editor
 
-> A backend framework independent visual composer for web.
+> A backend independent visual composer for web.
 
 ### What it does?
 Hyper Editor is a block based content editor. It is intended to be integrated with any Content Management System (CMS) or Framework. It is completely independent from any backend technology or platform.

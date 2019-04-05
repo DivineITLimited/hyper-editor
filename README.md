@@ -1,6 +1,6 @@
 
-![](logo.svg)
-> A framework agnostic Block based visual composer for web.
+![Hyper Editor](logo.svg)
+> A backend independent visual composer for web.
 
 ## Build Setup
 
@@ -15,4 +15,4 @@ npm run dev
 npm run build
 ```
 
-For example uses please check ```index.html```
+For more please refer to [https://divineitlimited.github.io/hyper-editor/demo.html](https://divineitlimited.github.io/hyper-editor/demo.html)
