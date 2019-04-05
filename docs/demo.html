@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hyper Editor</title>
+  <link rel="stylesheet" href="https://unpkg.com/hyper-editor@0.1.0/dist/hyper_editor.css" />
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet" />
+</head>
+<body>
+
+  <div style="background:#efefef" class="text-center p-5">
+    <img style="height: 100px; margin-left:auto; margin-right:auto" src="https://raw.githubusercontent.com/divineitlimited/hyper-editor/master/logo.svg?sanitize=true" />
+    <br>
+    <a class="btn btn-primary mt-4" href="https://divineitlimited.github.io/hyper-editor/">Go to Docs</a>
+  </div>
+  <div id="hyperEditor"></div>
+
+  <script type="text/javascript" src="https://unpkg.com/hyper-editor@0.1.0/dist/hyper_editor.js"></script>
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function(){
+
+      // Create Hyper Editor
+      var hyperEditor = new HyperEditor('#hyperEditor', {
+        imageSearchApi: 'http://localhost:8000/hyper-editor/api/images/',
+      })
+
+
+      // Register a new block
+      hyperEditor.registerBlock('imageChooser2', {
+        title: 'Image 2',
+        description: 'A simple image block.',
+        default_values: {
+          settings: {}
+        },
+        config: {
+          preview: function (self, callback) { callback('imageChooser2')},
+          styles: [{id: 'default', name: 'Default'}]
+        },
+        settings_schema: {
+          fields: [
+            {
+              type: 'chooser',
+              label: 'Image Chooser',
+              model: 'image',
+              chooserButtonText: 'Choose Image',
+              getItems: function(query, page, perPage, callback) {
+                var str = 'q='+query + '&page'+page + '&perPage'+perPage
+                fetch('http://localhost:8000/hyper-editor/api/images/?'+str)
+                  .then(function(response) { return response.json() })
+                  .then(function(data) {
+                    callback({
+                      total: data.total,
+                      currentPage: data.current_page,
+                      result: data.result,
+                    })
+                  })
+              },
+
+              displayItem: function(item) {
+                return item.title
+              },
+
+              displaySelectedItem: function (item) {
+                return item.title
+              }
+            }
+          ]
+        }
+      })
+
+      // Initialize Hyper Editor
+      hyperEditor.initialize()
+
+    })
+  </script>
+</body>
+</html>
