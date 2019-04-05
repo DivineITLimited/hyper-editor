@@ -1,5 +1,6 @@
 
-![Hyper Editor](logo.svg)
+<img height="100px" src="https://raw.githubusercontent.com/divineitlimited/hyper-editor/master/logo.svg?sanitize=true" />
+
 > A backend independent visual composer for web.
 
 ## Demo
