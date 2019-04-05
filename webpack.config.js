@@ -12,7 +12,7 @@ module.exports = {
     libraryTarget: 'umd',
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'hyper_editor_'+ VERSION +'.js'
+    filename: 'hyper_editor.js'
   },
   module: {
     rules: [
@@ -80,7 +80,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin("hyper_editor_"+VERSION+".css"),
+    new ExtractTextPlugin("hyper_editor.css"),
   ],
   resolve: {
     alias: {
