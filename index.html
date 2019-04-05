@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Hyper Editor</title>
+  </head>
+  <body>
+    <div id="hyperEditor"></div>
+    <script src="/dist/build.js"></script>
+    <script>
+      function preview(value, callback) {
+        callback('global preview function')
+      }
+      document.addEventListener('DOMContentLoaded', function(){
+        hyperEditor = new HyperEditor.default('#hyperEditor', {
+          imageSearchApi: 'http://localhost:8000/hyper-editor/api/images/',
+         // preview: preview,
+          blocks: {
+            contentbox: {
+              styles: [
+                {id: 'default', name: 'Default'},
+                {id: 'a', name: 'A'},
+                {id: 'b', name: 'B'},
+                {id: 'c', name: 'C'}
+              ]
+            },
+            text: {
+              styles: [
+                {id: 'default', name: 'Default'},
+                {id: 'c', name: 'C'}
+              ]
+            }
+          }
+        })
+
+
+        hyperEditor.register_block('imageChooser2', {
+          title: 'Image 2',
+          description: 'A simple image block.',
+          default_values: {
+            settings: {}
+          },
+          config: {
+            preview: function (self, callback) { callback('imageChooser2')},
+            styles: [{id: 'default', name: 'Default'}]
+          },
+          settings_schema: {
+            fields: [
+              {
+                type: 'chooser',
+                label: 'Image Chooser',
+                model: 'image',
+                chooserButtonText: 'Choose Image',
+                getItems: function(query, page, perPage, callback) {
+                  var str = 'q='+query + '&page'+page + '&perPage'+perPage
+                  fetch('http://localhost:8000/hyper-editor/api/images/?'+str)
+                  .then(function(response) { return response.json() })
+                  .then(function(data) {
+                    callback({
+                      total: data.total,
+                      currentPage: data.current_page,
+                      result: data.result,
+                    })
+                  })
+                },
+
+                displayItem: function(item) {
+                  return item.title
+                },
+
+                displaySelectedItem: function (item) {
+                  return item.title
+                }
+              }
+            ]
+          }
+        })
+
+        hyperEditor.initialize()
+
+
+      })
+    </script>
+  </body>
+</html>
+
