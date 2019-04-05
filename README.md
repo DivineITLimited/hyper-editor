@@ -11,3 +11,6 @@ Please refer to [https://divineitlimited.github.io/hyper-editor/](https://divine
 
 ## License
 MIT
+
+
+Made with :heart: at [Divine IT Limited](https://divineit.net/), Dhaka, Bangladesh
