@@ -30,50 +30,6 @@
         imageSearchApi: 'http://localhost:8000/hyper-editor/api/images/',
       })
 
-
-      // Register a new block
-      hyperEditor.registerBlock('imageChooser2', {
-        title: 'Image 2',
-        description: 'A simple image block.',
-        default_values: {
-          settings: {}
-        },
-        config: {
-          preview: function (self, callback) { callback('imageChooser2')},
-          styles: [{id: 'default', name: 'Default'}]
-        },
-        settings_schema: {
-          fields: [
-            {
-              type: 'chooser',
-              label: 'Image Chooser',
-              model: 'image',
-              chooserButtonText: 'Choose Image',
-              getItems: function(query, page, perPage, callback) {
-                var str = 'q='+query + '&page'+page + '&perPage'+perPage
-                fetch('http://localhost:8000/hyper-editor/api/images/?'+str)
-                  .then(function(response) { return response.json() })
-                  .then(function(data) {
-                    callback({
-                      total: data.total,
-                      currentPage: data.current_page,
-                      result: data.result,
-                    })
-                  })
-              },
-
-              displayItem: function(item) {
-                return item.title
-              },
-
-              displaySelectedItem: function (item) {
-                return item.title
-              }
-            }
-          ]
-        }
-      })
-
       // Initialize Hyper Editor
       hyperEditor.initialize()
 
