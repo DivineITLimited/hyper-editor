@@ -1,14 +1,14 @@
 {
-  "name": "hyper",
-  "description": "A Vue.js project",
-  "version": "1.0.0",
-  "author": "Shimul Chowdhury <shimul@divine-it.net>",
+  "name": "hyper-editor",
+  "description": "A backend framework independent visual composer for web.",
+  "version": "0.1.0-beta.1",
+  "author": "Shimul Chowdhury <shimul.chowdhury192@gmail.com>",
   "license": "MIT",
-  "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
+  "main": "src/hyper.js",
   "dependencies": {
     "bootstrap-vue": "^2.0.0-rc.11",
     "deepmerge": "^2.1.1",

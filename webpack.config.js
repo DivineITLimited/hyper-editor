@@ -2,6 +2,7 @@ var path = require('path')
 var webpack = require('webpack')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const VERSION = require("./package.json").version
 
 module.exports = {
   entry: './src/hyper.js',
@@ -11,7 +12,7 @@ module.exports = {
     libraryTarget: 'umd',
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'hyper.js'
+    filename: 'hyper_editor_'+ VERSION +'.js'
   },
   module: {
     rules: [
@@ -79,7 +80,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin("hyper.css"),
+    new ExtractTextPlugin("hyper_editor_"+VERSION+".css"),
   ],
   resolve: {
     alias: {
