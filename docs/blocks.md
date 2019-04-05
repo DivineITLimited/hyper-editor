@@ -23,15 +23,15 @@ A Hyper Editor Block can be defined as a Javascript Object -
 }
 ```
 
-- title: The title of the block, will be shown in block chooser
-- description: Description of the block, will be shown in block chooser
-- settings_schema: JS Object / Array defining the required form fields of the block
-- default_values:
-  - settings: Default value for settings form
-  - general: Default values for general settings (Common for all blocks)
-- config:
-  - preview: This function will be called by HyperEditor to show preview in-place.
-  - styles: List of supported styles for this block
+- **title:** The title of the block, will be shown in block chooser
+- **description:** Description of the block, will be shown in block chooser
+- **settings_schema:** JS Object / Array defining the required form fields of the block. [vue-form-generator](https://github.com/vue-generators/vue-form-generator) Schema is used here. Please see their documentation for Schema Structure.
+- **default_values:**
+  - **settings:** Default value for settings form. This is the model for **settings_schema**.
+  - **general:** Default values for general settings (Common for all blocks)
+- **config:**
+  - **preview:** This function will be called by HyperEditor to show preview in-place.
+  - **styles:** List of supported styles for this block
 
 A full example of block can be seen as -
 

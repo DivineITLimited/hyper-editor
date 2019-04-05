@@ -2,17 +2,12 @@
 ![Hyper Editor](logo.svg)
 > A backend independent visual composer for web.
 
-## Build Setup
+## Demo
+Checkout the demo here - [https://divineitlimited.github.io/hyper-editor/demo.html](https://divineitlimited.github.io/hyper-editor/demo.html)
 
-``` bash
-# install dependencies
-npm install
+## Documentation
 
-# serve with hot reload at localhost:8080
-npm run dev
+Please refer to [https://divineitlimited.github.io/hyper-editor/](https://divineitlimited.github.io/hyper-editor/)
 
-# build for production with minification
-npm run build
-```
-
-For more please refer to [https://divineitlimited.github.io/hyper-editor/demo.html](https://divineitlimited.github.io/hyper-editor/demo.html)
+## License
+MIT
