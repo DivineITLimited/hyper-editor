@@ -26,83 +26,7 @@
                     </b-row>
                     <b-pagination class="mt-2" v-if="pagination" size="sm" :total-rows="pagination.total" @change="paginate" v-model="pagination.current_page" :per-page="10" />
                 </b-tab>
-                <!-- <b-tab title="Upload" >
-                    <br>I'm the second tab content
-                </b-tab> -->
-                <b-tab title="Attributes" v-if="selected">
-                    <b-form-group id="caption"
-                        label="Caption:"
-                        label-for="caption">
-                        <b-form-input id="caption"
-                            size="sm"
-                            v-model="attr.caption"
-                            type="text">
-                        </b-form-input>
-                    </b-form-group>
-                    <b-form-group id="alt"
-                        label="Alt Text:"
-                        label-for="alt">
-                        <b-form-input id="alt"
-                            size="sm"
-                            v-model="attr.alt"
-                            type="text">
-                        </b-form-input>
-                    </b-form-group>
-                    <b-row>
-                        <b-col>
-                            <b-form-group id="width"
-                                label="Width:"
-                                label-for="width">
-                                <b-form-input id="width"
-                                    size="sm"
-                                    v-model="attr.width"
-                                    type="number"
-                                    placeholder="Width in px">
-                                </b-form-input>
-                            </b-form-group>
-                        </b-col>
-                        <b-col>
-                            <b-form-group id="height"
-                                label="Height:"
-                                label-for="height">
-                                <b-form-input id="height"
-                                    size="sm"
-                                    v-model="attr.height"
-                                    type="number"
-                                    placeholder="Height in px">
-                                </b-form-input>
-                            </b-form-group>
-                        </b-col>
-                    </b-row>
-
-                    <b-row v-if="attr.width && attr.height">
-                        <b-col>
-                            <b-form-group>
-                                <b-form-checkbox v-if="attr.width && attr.height" v-model="attr.fill">Fill</b-form-checkbox>
-                                <b-form-checkbox v-if="attr.fill" v-model="attr.crop">Crop</b-form-checkbox>
-                            </b-form-group>
-                        </b-col>
-                        <b-col v-if="attr.crop">
-                            <b-form-group id="cropNearFocustPoint"
-                                label="Zoom Percent towards focus point:"
-                                label-for="cropNearFocustPoint">
-                                <b-form-input id="cropNearFocustPoint"
-                                    size="sm"
-                                    v-model="attr.cropNearFocus"
-                                    type="number"
-                                    min="0"
-                                    max="100"
-                                    placeholder="Height in px">
-                                </b-form-input>
-                            </b-form-group>
-                        </b-col>
-                    </b-row>
-
-                </b-tab>
             </b-tabs>
-
-
-
         </b-modal>
     </div>
 </template>
@@ -125,16 +49,7 @@ export default {
             images: [],
             pagination: false,
             q: '',
-            selected: {},
-            attr: {
-                width: null,
-                height: null,
-                fill: false,
-                crop: false,
-                cropNearFocus: 60,
-                caption: '',
-                alt: ''
-            }
+            selected: {}
         }
     },
 
