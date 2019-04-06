@@ -339,6 +339,75 @@
                             "bottom": null
                           }
                         }
+                      },
+                      {
+                        "type": "image",
+                        "children": [],
+                        "settings": {
+                          "image": {
+                            "id": 1,
+                            "title": "Saint Martin, Cox Bajar, Bangladesh (Photo by Ashraful Haque Akash on Unsplash)",
+                            "url": "https://images.unsplash.com/photo-1549048144-899e8172ca6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",
+                            "attr": {
+                              "width": null,
+                              "height": null,
+                              "fill": false,
+                              "crop": false,
+                              "cropNearFocus": 60,
+                              "caption": "",
+                              "alt": ""
+                            }
+                          }
+                        },
+                        "id": "i1554530748_3",
+                        "extra": {
+                          "cssCode": "",
+                          "jsCode": "",
+                          "htmlCode": ""
+                        },
+                        "general": {
+                          "padding": {
+                            "unit": "px",
+                            "left": null,
+                            "top": null,
+                            "right": null,
+                            "bottom": null
+                          },
+                          "margin": {
+                            "unit": "px",
+                            "left": null,
+                            "top": null,
+                            "right": null,
+                            "bottom": null
+                          }
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "children": [],
+                        "extra": {
+                          "searchable": true
+                        },
+                        "settings": {
+                          "text": "<p>Saint Martin, Cox Bajar, Bangladesh (Photo by Ashraful Haque Akash on Unsplash)</p>"
+                        },
+                        "id": "i1554530896_10",
+                        "general": {
+                          "padding": {
+                            "unit": "px",
+                            "left": null,
+                            "top": null,
+                            "right": null,
+                            "bottom": null
+                          },
+                          "margin": {
+                            "unit": "px",
+                            "left": null,
+                            "top": null,
+                            "right": null,
+                            "bottom": null
+                          }
+                        }
                       }
                     ],
                     "extra": {},
@@ -350,13 +419,55 @@
                     "type": "nestableitem",
                     "children": [
                       {
+                        "type": "image",
+                        "children": [],
+                        "settings": {
+                          "image": {
+                            "id": 4,
+                            "title": "Bangladesh (Photo by rabby ahmed on Unsplash)",
+                            "url": "https://images.unsplash.com/photo-1532384826118-39ed049c64c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1328&q=80",
+                            "attr": {
+                              "width": null,
+                              "height": null,
+                              "fill": false,
+                              "crop": false,
+                              "cropNearFocus": 60,
+                              "caption": "",
+                              "alt": ""
+                            }
+                          }
+                        },
+                        "id": "i1554530766_4",
+                        "extra": {
+                          "cssCode": "",
+                          "jsCode": "",
+                          "htmlCode": ""
+                        },
+                        "general": {
+                          "padding": {
+                            "unit": "px",
+                            "left": null,
+                            "top": null,
+                            "right": null,
+                            "bottom": null
+                          },
+                          "margin": {
+                            "unit": "px",
+                            "left": null,
+                            "top": null,
+                            "right": null,
+                            "bottom": null
+                          }
+                        }
+                      },
+                      {
                         "type": "text",
                         "children": [],
                         "extra": {
                           "searchable": true
                         },
                         "settings": {
-                          "text": "<p>Morbi tristique senectus et netus et malesuada fames. Consectetur adipiscing elit duis tristique sollicitudin. Pharetra vel turpis nunc eget lorem dolor sed. Etiam tempor orci eu lobortis elementum nibh. Morbi tincidunt augue interdum velit. Sed felis eget velit aliquet sagittis id. Nec dui nunc mattis enim ut tellus. Eu volutpat odio facilisis mauris sit amet massa. Mauris in aliquam sem fringilla ut morbi tincidunt augue. Vestibulum sed arcu non odio euismod. Bibendum est ultricies integer quis auctor elit sed. Tristique nulla aliquet enim tortor at auctor urna. Orci sagittis eu volutpat odio facilisis mauris sit amet massa.</p>"
+                          "text": "<p>Bangladesh (Photo by rabby ahmed on Unsplash)</p><p><br></p><p>Morbi tristique senectus et netus et malesuada fames. Consectetur adipiscing elit duis tristique sollicitudin. Pharetra vel turpis nunc eget lorem dolor sed. Etiam tempor orci eu lobortis elementum nibh. Morbi tincidunt augue interdum velit. Sed felis eget velit aliquet sagittis id. Nec dui nunc mattis enim ut tellus. Eu volutpat odio facilisis mauris sit amet massa. Mauris in aliquam sem fringilla ut morbi tincidunt augue. Vestibulum sed arcu non odio euismod. Bibendum est ultricies integer quis auctor elit sed. Tristique nulla aliquet enim tortor at auctor urna. Orci sagittis eu volutpat odio facilisis mauris sit amet massa.</p>"
                         },
                         "id": "i1554527760_21",
                         "general": {
