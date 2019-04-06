@@ -73,9 +73,9 @@
                   "searchable": true
                 },
                 "settings": {
-                  "text": "<p><a href=\"https://divineitlimited.github.io/hyper-editor/#/\" target=\"_blank\"><strong>Documentation</strong></a></p><p><a href=\"https://github.com/divineitlimited/hyper-editor\" target=\"_blank\"><strong>Github</strong></a></p>"
+                  "text": "<p>Hyper Editor is a block based content editor. It is intended to be integrated with any Content Management System (CMS) or Framework.</p>"
                 },
-                "id": "i1554529621_36",
+                "id": "i1554530213_4",
                 "general": {
                   "padding": {
                     "unit": "px",
@@ -169,7 +169,7 @@
           "searchable": true
         },
         "settings": {
-          "text": "<h2>What it does?</h2><p>Hyper Editor is a block based content editor. It is intended to be integrated with any Content Management System (CMS) or Framework. It is completely independent from any backend technology or platform.</p><p>Content Editing in any Framework or CMS is a hard thing to do. Every CMS have their own way of editing contents of a Web-page. It is specially hard when working with a framework. A lot of time software teams tend to integrate a CMS with their custom application only to manage web pages or other rich contents. And contents of one CMS is not easy (sometimes impossible) to interchange with other CMS.</p><p>There are lots of great commercial and couple of open source Content Editors out there. But most of them are build for specific platform such as Wordpress, which is not usable in other great platforms like Wagtail or Django CMS.</p><p>Hyper Editor addresses this issue by being a JS only Content Editor, which supports extending it via plugins and providing a JSON output which later to be parsed via different platforms.</p>"
+          "text": "<h2>What it does?</h2><p>Content Editing in any Framework or CMS is a hard thing to do. Every CMS have their own way of editing contents of a Web-page. It is specially hard when working with a framework. A lot of time software teams tend to integrate a CMS with their custom application only to manage web pages or other rich contents. And contents of one CMS is not easy (sometimes impossible) to interchange with other CMS.</p><p>There are lots of great commercial and couple of open source Content Editors out there. But most of them are build for specific platform such as Wordpress, which is not usable in other great platforms like Wagtail or Django CMS.</p><p>Hyper Editor addresses this issue by being a JS only Content Editor, which supports extending it via plugins and providing a JSON output which later to be parsed via different platforms.</p>"
         },
         "id": "i1554527543_2",
         "general": {
