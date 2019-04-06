@@ -8,30 +8,49 @@
   <title>Hyper Editor</title>
   <link rel="stylesheet" href="https://unpkg.com/hyper-editor@0.1.0/dist/hyper_editor.css" />
   <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet" />
+  <style>
+    .editor-wrapper {
+      margin: 20px;
+      background: #fff;
+      padding: 10px;
+    }
+    body {
+      background: #efefef
+    }
+  </style>
 </head>
 <body>
-
-  <div style="background:#efefef" class="text-center p-5">
-    <img style="height: 100px; margin-left:auto; margin-right:auto" src="https://raw.githubusercontent.com/divineitlimited/hyper-editor/master/logo.svg?sanitize=true" />
-    <br>
-    <a class="btn btn-primary mt-4" href="https://divineitlimited.github.io/hyper-editor/">Go to Docs</a>
+  <div class="editor-wrapper">
+    <div id="hyperEditor"></div>
   </div>
-  <div id="hyperEditor"></div>
-
   <script type="text/javascript" src="https://unpkg.com/hyper-editor@0.1.0/dist/hyper_editor.js"></script>
   <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 
   <script>
+
+    var DATA_API = 'https://divineitlimited.github.io/hyper-editor/data.json'
+    var IMAGE_API = 'https://divineitlimited.github.io/hyper-editor/images.json'
 
     document.addEventListener('DOMContentLoaded', function(){
 
       // Create Hyper Editor
       var hyperEditor = new HyperEditor('#hyperEditor', {
         imageSearchApi: 'http://localhost:8000/hyper-editor/api/images/',
+        blocks: {
+          image: {
+            getImages: function(apiUrl, q, page, callback) {
+              fetch(IMAGE_API)
+                .then(res => res.json())
+                .then(res => callback(res))
+            }
+          }
+        }
       })
 
-      // Initialize Hyper Editor
-      hyperEditor.initialize()
+      // Initialize Hyper Editor from existing data
+      fetch(DATA_API)
+        .then(res => res.json())
+        .then(res => hyperEditor.initialize(res))
 
     })
   </script>

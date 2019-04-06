@@ -1,0 +1,439 @@
+[
+  {
+    "type": "section",
+    "children": [
+      {
+        "type": "row",
+        "children": [
+          {
+            "type": "column",
+            "children": [
+              {
+                "type": "image",
+                "children": [],
+                "settings": {
+                  "image": {
+                    "id": 5,
+                    "title": "Hyper Editor Logo",
+                    "url": "https://raw.githubusercontent.com/divineitlimited/hyper-editor/master/logo.svg?sanitize=true",
+                    "attr": {
+                      "width": null,
+                      "height": null,
+                      "fill": false,
+                      "crop": false,
+                      "cropNearFocus": 60,
+                      "caption": "",
+                      "alt": ""
+                    }
+                  }
+                },
+                "id": "i1554529522_23",
+                "extra": {
+                  "cssCode": "",
+                  "jsCode": "",
+                  "htmlCode": ""
+                },
+                "general": {
+                  "padding": {
+                    "unit": "px",
+                    "left": null,
+                    "top": null,
+                    "right": null,
+                    "bottom": null
+                  },
+                  "margin": {
+                    "unit": "px",
+                    "left": null,
+                    "top": null,
+                    "right": null,
+                    "bottom": null
+                  }
+                }
+              }
+            ],
+            "settings": {
+              "sizeLG": 6,
+              "sizeMD": 6,
+              "sizeSM": 12,
+              "sizeXS": 12,
+              "offsetLG": 0,
+              "offsetMD": 0,
+              "offsetSM": 0,
+              "offsetXS": 0
+            },
+            "id": "i1554529587_32"
+          },
+          {
+            "type": "column",
+            "children": [
+              {
+                "type": "text",
+                "children": [],
+                "extra": {
+                  "searchable": true
+                },
+                "settings": {
+                  "text": "<p><a href=\"https://divineitlimited.github.io/hyper-editor/#/\" target=\"_blank\"><strong>Documentation</strong></a></p><p><a href=\"https://github.com/divineitlimited/hyper-editor\" target=\"_blank\"><strong>Github</strong></a></p>"
+                },
+                "id": "i1554529621_36",
+                "general": {
+                  "padding": {
+                    "unit": "px",
+                    "left": null,
+                    "top": null,
+                    "right": null,
+                    "bottom": null
+                  },
+                  "margin": {
+                    "unit": "px",
+                    "left": null,
+                    "top": null,
+                    "right": null,
+                    "bottom": null
+                  }
+                }
+              }
+            ],
+            "settings": {
+              "sizeLG": 6,
+              "sizeMD": 6,
+              "sizeSM": 12,
+              "sizeXS": 12,
+              "offsetLG": 0,
+              "offsetMD": 0,
+              "offsetSM": 0,
+              "offsetXS": 0
+            },
+            "id": "i1554529591_33",
+            "extra": {
+              "cssCode": "",
+              "jsCode": "",
+              "htmlCode": ""
+            },
+            "general": {
+              "padding": {
+                "unit": "px",
+                "left": null,
+                "top": null,
+                "right": null,
+                "bottom": null
+              },
+              "margin": {
+                "unit": "px",
+                "left": null,
+                "top": null,
+                "right": null,
+                "bottom": null
+              },
+              "textAlignment": "center"
+            }
+          }
+        ],
+        "id": "i1554529587_31"
+      }
+    ],
+    "settings": {
+      "type": "Box"
+    },
+    "id": "i1554529504_21",
+    "extra": {
+      "cssCode": "",
+      "jsCode": "",
+      "htmlCode": ""
+    },
+    "general": {
+      "padding": {
+        "unit": "px",
+        "left": null,
+        "top": null,
+        "right": null,
+        "bottom": null
+      },
+      "margin": {
+        "unit": "px",
+        "left": null,
+        "top": null,
+        "right": null,
+        "bottom": null
+      },
+      "textAlignment": "center"
+    }
+  },
+  {
+    "type": "section",
+    "children": [
+      {
+        "type": "text",
+        "children": [],
+        "extra": {
+          "searchable": true
+        },
+        "settings": {
+          "text": "<h2>What it does?</h2><p>Hyper Editor is a block based content editor. It is intended to be integrated with any Content Management System (CMS) or Framework. It is completely independent from any backend technology or platform.</p><p>Content Editing in any Framework or CMS is a hard thing to do. Every CMS have their own way of editing contents of a Web-page. It is specially hard when working with a framework. A lot of time software teams tend to integrate a CMS with their custom application only to manage web pages or other rich contents. And contents of one CMS is not easy (sometimes impossible) to interchange with other CMS.</p><p>There are lots of great commercial and couple of open source Content Editors out there. But most of them are build for specific platform such as Wordpress, which is not usable in other great platforms like Wagtail or Django CMS.</p><p>Hyper Editor addresses this issue by being a JS only Content Editor, which supports extending it via plugins and providing a JSON output which later to be parsed via different platforms.</p>"
+        },
+        "id": "i1554527543_2",
+        "general": {
+          "padding": {
+            "unit": "px",
+            "left": null,
+            "top": null,
+            "right": null,
+            "bottom": null
+          },
+          "margin": {
+            "unit": "px",
+            "left": null,
+            "top": null,
+            "right": null,
+            "bottom": null
+          }
+        }
+      },
+      {
+        "type": "text",
+        "children": [],
+        "extra": {
+          "searchable": true
+        },
+        "settings": {
+          "text": "<h2>Examples</h2>"
+        },
+        "id": "i1554527788_23",
+        "general": {
+          "padding": {
+            "unit": "px",
+            "left": null,
+            "top": null,
+            "right": null,
+            "bottom": null
+          },
+          "margin": {
+            "unit": "px",
+            "left": null,
+            "top": null,
+            "right": null,
+            "bottom": null
+          }
+        }
+      },
+      {
+        "type": "row",
+        "children": [
+          {
+            "type": "column",
+            "children": [
+              {
+                "type": "image",
+                "children": [],
+                "settings": {
+                  "image": {
+                    "id": 3,
+                    "title": "Dhaka, Bangladesh (Photo by Asif Aman on Unsplash)",
+                    "url": "https://images.unsplash.com/photo-1549219137-2e57ad774464?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80",
+                    "attr": {
+                      "width": null,
+                      "height": null,
+                      "fill": false,
+                      "crop": false,
+                      "cropNearFocus": 60,
+                      "caption": "",
+                      "alt": ""
+                    }
+                  }
+                },
+                "id": "i1554529246_1",
+                "extra": {
+                  "cssCode": "",
+                  "jsCode": "",
+                  "htmlCode": ""
+                },
+                "general": {
+                  "padding": {
+                    "unit": "px",
+                    "left": null,
+                    "top": null,
+                    "right": null,
+                    "bottom": null
+                  },
+                  "margin": {
+                    "unit": "px",
+                    "left": null,
+                    "top": null,
+                    "right": null,
+                    "bottom": null
+                  }
+                }
+              },
+              {
+                "type": "text",
+                "children": [],
+                "extra": {
+                  "searchable": true
+                },
+                "settings": {
+                  "text": "<p>Dhaka, Bangladesh (Photo by Asif Aman on Unsplash)</p>"
+                },
+                "id": "i1554529353_11",
+                "general": {
+                  "padding": {
+                    "unit": "px",
+                    "left": null,
+                    "top": null,
+                    "right": null,
+                    "bottom": null
+                  },
+                  "margin": {
+                    "unit": "px",
+                    "left": null,
+                    "top": null,
+                    "right": null,
+                    "bottom": null
+                  }
+                }
+              }
+            ],
+            "settings": {
+              "sizeLG": 6,
+              "sizeMD": 6,
+              "sizeSM": 12,
+              "sizeXS": 12,
+              "offsetLG": 0,
+              "offsetMD": 0,
+              "offsetSM": 0,
+              "offsetXS": 0
+            },
+            "id": "i1554529288_5"
+          },
+          {
+            "type": "column",
+            "children": [
+              {
+                "type": "tab",
+                "children": [
+                  {
+                    "type": "nestableitem",
+                    "children": [
+                      {
+                        "type": "text",
+                        "children": [],
+                        "extra": {
+                          "searchable": true
+                        },
+                        "settings": {
+                          "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pulvinar pellentesque habitant morbi tristique senectus et netus. Quis hendrerit dolor magna eget est lorem ipsum dolor sit. Orci sagittis eu volutpat odio facilisis mauris sit. Maecenas accumsan lacus vel facilisis. Condimentum lacinia quis vel eros donec ac odio tempor. Elementum curabitur vitae nunc sed velit dignissim sodales. Sed elementum tempus egestas sed sed. Vitae justo eget magna fermentum iaculis. Tristique magna sit amet purus gravida quis. Pellentesque sit amet porttitor eget dolor morbi non arcu. Non curabitur gravida arcu ac tortor dignissim. Elementum integer enim neque volutpat ac tincidunt vitae semper quis. At elementum eu facilisis sed.</p>"
+                        },
+                        "id": "i1554527748_19",
+                        "general": {
+                          "padding": {
+                            "unit": "px",
+                            "left": null,
+                            "top": null,
+                            "right": null,
+                            "bottom": null
+                          },
+                          "margin": {
+                            "unit": "px",
+                            "left": null,
+                            "top": null,
+                            "right": null,
+                            "bottom": null
+                          }
+                        }
+                      }
+                    ],
+                    "extra": {},
+                    "settings": {},
+                    "code": "tabItem1554527687_11",
+                    "id": "i1554527687_12"
+                  },
+                  {
+                    "type": "nestableitem",
+                    "children": [
+                      {
+                        "type": "text",
+                        "children": [],
+                        "extra": {
+                          "searchable": true
+                        },
+                        "settings": {
+                          "text": "<p>Morbi tristique senectus et netus et malesuada fames. Consectetur adipiscing elit duis tristique sollicitudin. Pharetra vel turpis nunc eget lorem dolor sed. Etiam tempor orci eu lobortis elementum nibh. Morbi tincidunt augue interdum velit. Sed felis eget velit aliquet sagittis id. Nec dui nunc mattis enim ut tellus. Eu volutpat odio facilisis mauris sit amet massa. Mauris in aliquam sem fringilla ut morbi tincidunt augue. Vestibulum sed arcu non odio euismod. Bibendum est ultricies integer quis auctor elit sed. Tristique nulla aliquet enim tortor at auctor urna. Orci sagittis eu volutpat odio facilisis mauris sit amet massa.</p>"
+                        },
+                        "id": "i1554527760_21",
+                        "general": {
+                          "padding": {
+                            "unit": "px",
+                            "left": null,
+                            "top": null,
+                            "right": null,
+                            "bottom": null
+                          },
+                          "margin": {
+                            "unit": "px",
+                            "left": null,
+                            "top": null,
+                            "right": null,
+                            "bottom": null
+                          }
+                        }
+                      }
+                    ],
+                    "extra": {},
+                    "settings": {},
+                    "code": "tabItem1554527699_14",
+                    "id": "i1554527699_15"
+                  }
+                ],
+                "extra": {},
+                "settings": {
+                  "tabItems": [
+                    {
+                      "code": "tabItem1554527687_11",
+                      "title": "Item 1"
+                    },
+                    {
+                      "code": "tabItem1554527699_14",
+                      "title": "Item 2"
+                    }
+                  ]
+                },
+                "id": "i1554527680_8",
+                "general": {
+                  "padding": {
+                    "unit": "px",
+                    "left": null,
+                    "top": null,
+                    "right": null,
+                    "bottom": null
+                  },
+                  "margin": {
+                    "unit": "px",
+                    "left": null,
+                    "top": null,
+                    "right": null,
+                    "bottom": null
+                  }
+                }
+              }
+            ],
+            "settings": {
+              "sizeLG": 6,
+              "sizeMD": 6,
+              "sizeSM": 12,
+              "sizeXS": 12,
+              "offsetLG": 0,
+              "offsetMD": 0,
+              "offsetSM": 0,
+              "offsetXS": 0
+            },
+            "id": "i1554529305_6"
+          }
+        ],
+        "id": "i1554529288_4"
+      }
+    ],
+    "settings": {
+      "type": "Box"
+    },
+    "id": "i1554527541_1"
+  }
+]
