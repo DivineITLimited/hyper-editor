@@ -1,5 +1,5 @@
 
-<img height="100px" src="https://divineitlimited.github.io/hyper-editor/logo.png" />
+<img height="50px" src="https://divineitlimited.github.io/hyper-editor/logo.png" />
 
 > A backend independent visual composer for web.
 
