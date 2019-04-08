@@ -19,6 +19,7 @@ import tabBlock from './plugins/tabblock'
 import nestableItem from './plugins/nestableitem'
 import linkBlock from './plugins/linkblock'
 import sliderBlock from './plugins/sliderblock'
+import headingBlock from './plugins/heading'
 
 
 
@@ -83,6 +84,7 @@ export default class HyperEditor {
         this.pm.register('link', linkBlock)
         this.pm.register('nestableitem', nestableItem)
         this.pm.register('slider', sliderBlock)
+        this.pm.register('heading', headingBlock)
     }
 
     initialize(editorState = []) {
