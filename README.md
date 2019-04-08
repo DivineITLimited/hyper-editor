@@ -3,6 +3,9 @@
 
 > A backend independent visual composer for web.
 
+[![Build Status](https://travis-ci.org/DivineITLimited/hyper-editor.svg?branch=master)](https://travis-ci.org/DivineITLimited/hyper-editor)
+
+
 ## Demo
 Checkout the demo here - [https://divineitlimited.github.io/hyper-editor/demo.html](https://divineitlimited.github.io/hyper-editor/demo.html)
 
