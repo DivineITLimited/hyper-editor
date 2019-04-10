@@ -2,6 +2,13 @@
 
 Hyper Editor itself has no opinion on Backend Platform. Hyper Editor produces a structured JSON document that to be parsed by a parser to generate HTML.
 
+## Integrations
+
+- [Django Hyper Editor](https://github.com/DivineITLimited/django-hyper-editor) (Supports wagtail too)
+
+
+## Output format
+
 Every Block has following Structure
 
 ```javascript
@@ -66,5 +73,3 @@ In this Structure contains following elements -
 
 **Section -> Row -> Column -> Text**
 
-## Integrations
-There is no official integrations yet! But we are working on it. We would love to know if you have one!
