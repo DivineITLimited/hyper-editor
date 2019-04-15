@@ -59,11 +59,11 @@ export default {
 
     source: {
       get () {
-        return JSON.stringify(this.editorData)
+        return JSON.stringify({ blocks: this.editorData }, null, 2)
       },
       set(value) {
         try {
-          this.editorData = JSON.parse(value)
+          this.editorData = JSON.parse(value.blocks)
         } catch(error) {
 
         }
