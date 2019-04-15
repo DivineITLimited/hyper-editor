@@ -123,7 +123,11 @@ export default class HyperEditor {
             el: this.elem,
             store: store,
             beforeCreate() {
-                this.$store.commit(RESET_EDITOR_STATE, editorState)
+                if (editorState.constructor === Array) {
+                  this.$store.commit(RESET_EDITOR_STATE, editorState)
+                } else {
+                  this.$store.commit(RESET_EDITOR_STATE, editorState.blocks)
+                }
             },
             render: h => h(App)
         })
@@ -131,7 +135,9 @@ export default class HyperEditor {
         this.vueApp.$store.subscribe((change) => {
             if (this.stateChangeCallback
                 && isFunction(this.stateChangeCallback)) {
-                let cp_state = cloneDeep(this.vueApp.$store.state.editor)
+                let cp_state = {
+                  blocks: cloneDeep(this.vueApp.$store.state.editor)
+                }
                 this.stateChangeCallback(cp_state)
             }
         })
