@@ -11,7 +11,7 @@
         :cloneAction="clone"
         :removeAction="remove" />
 
-    <draggable v-if="!collapsed" v-model="children" class="row" :options="{handle:'.cmHandle', animation:150}">
+    <draggable v-if="!collapsed" v-model="children" class="row" v-bind="{handle:'.cmHandle', animation:150}">
         <Column v-for="child in children" :key="child.id" :id="child.id" />
     </draggable>
 </div>

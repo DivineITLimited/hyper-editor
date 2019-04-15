@@ -10,7 +10,7 @@
       </b-button-toolbar>
       <textarea id="sourceEditor" v-if="viewSource" v-model="source"></textarea>
       <div v-else>
-        <draggable v-model="editorData" :options="{handle:'.smHandle', animation:150}">
+        <draggable v-model="editorData" v-bind="{handle:'.smHandle', animation:150}">
           <ESection v-for="item in editorData" :key="item.id" :id="item.id"></ESection>
         </draggable>
 

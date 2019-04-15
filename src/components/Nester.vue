@@ -1,5 +1,5 @@
 <template>
-    <draggable v-model="children" :options="{handle:'.blHandle', animation:150, group:'moveable'}">
+    <draggable v-model="children" v-bind="{handle:'.blHandle', animation:150, group:'moveable'}">
 
         <ComponentLoader v-for="child in children" :key="child.id" :name="child.type" :id="child.id" handle='blHandle' />
 
@@ -64,7 +64,7 @@ export default {
           outline: none !important;
        }
      }
-      
+
 
   }
   p.noBlockMessage {

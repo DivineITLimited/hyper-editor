@@ -22,7 +22,7 @@
             <vue-form-generator :schema="schemaOfSchema" :model="schemaValue"></vue-form-generator>
         </b-modal>
 
-        <draggable v-model="items" :options="{animation:150}">
+        <draggable v-model="items" v-bind="{animation:150}">
             <b-card size="sm" class="mt-1" v-for="(item, i) in items" :key="'item_' + i" :title="item.title">
                 <b-button size="sm" variant="default" @click="edit(i)">Edit</b-button>
             </b-card>

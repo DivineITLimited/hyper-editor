@@ -1,6 +1,6 @@
 <template>
     <div class="hyper-multiObjWrapper">
-        <draggable v-model="objects" :options="{handle:'.itemHandle', animation:150}">
+        <draggable v-model="objects" v-bind="{handle:'.itemHandle', animation:150}">
             <div class="singleObjectWrapper" v-for="(item, i) in objects" :key="`'mo-' + ${i}`">
                 <div class="actions">
                     <b-button size="sm" class="itemHandle" variant="outline-info"><icon name="move" /></b-button>
