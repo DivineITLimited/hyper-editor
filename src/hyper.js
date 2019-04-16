@@ -46,9 +46,10 @@ import ComponentLoader from './components/ComponentLoader'
 import Block from './components/Block'
 import draggable from 'vuedraggable'
 
+
 export default class HyperEditor {
 
-    constructor(elem, configs = {}) {
+  constructor(elem, configs = {}) {
         const defaultConfig = {
             imageSearchApi: null,
             preview: null

@@ -24,7 +24,6 @@
 </template>
 
 <script>
-
 import draggable from 'vuedraggable'
 import ESection from './components/Section'
 import EditPanel from './components/EditPanel'

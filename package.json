@@ -11,6 +11,7 @@
   },
   "main": "src/hyper.js",
   "dependencies": {
+<<<<<<< Updated upstream
     "bootstrap-vue": "^2.0.0-rc.11",
     "deepmerge": "^2.1.1",
     "feather-icons": "^4.7.3",
@@ -20,6 +21,15 @@
     "vue-form-generator": "^2.2.2",
     "vuedraggable": "^2.16.0",
     "vuex": "^3.0.1"
+=======
+    "deepmerge": "^3.2.0",
+    "feather-icons": "^4.21.0",
+    "vue": "^2.6.10",
+    "vue-color": "^2.7.0",
+    "vue-form-generator": "^2.3.4",
+    "vuedraggable": "^2.20.0",
+    "vuex": "^3.1.0"
+>>>>>>> Stashed changes
   },
   "browserslist": [
     "> 1%",
@@ -27,20 +37,24 @@
     "not ie <= 8"
   ],
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.0",
-    "babel-preset-stage-3": "^6.24.1",
-    "cross-env": "^5.0.5",
-    "css-loader": "^0.28.7",
-    "extract-text-webpack-plugin": "^3.0.2",
-    "file-loader": "^1.1.4",
-    "node-sass": "^4.5.3",
-    "sass-loader": "^6.0.6",
-    "vue-loader": "^13.0.5",
-    "vue-template-compiler": "^2.4.4",
-    "webpack": "^3.6.0",
-    "webpack-bundle-analyzer": "^2.13.1",
-    "webpack-dev-server": "^2.9.1"
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-json-strings": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-syntax-import-meta": "^7.0.0",
+    "@babel/preset-env": "^7.4.3",
+    "babel-loader": "^8.0.5",
+    "cross-env": "^5.2.0",
+    "css-loader": "^2.1.1",
+    "file-loader": "^3.0.1",
+    "mini-css-extract-plugin": "^0.6.0",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
+    "vue-loader": "^15.7.0",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.30.0",
+    "webpack-bundle-analyzer": "^3.3.2",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.3.1"
   }
 }

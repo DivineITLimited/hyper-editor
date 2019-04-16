@@ -1,8 +1,8 @@
 var path = require('path')
 var webpack = require('webpack')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const VERSION = require("./package.json").version
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
   entry: './src/hyper.js',
@@ -17,31 +17,20 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'vue-style-loader',
-          use: ['css-loader']
-        })
-      },
-      {
-        test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'vue-style-loader',
-          use: [
-            'css-loader',
-            'sass-loader'
-          ]
-        }),
-      },
-      {
-        test: /\.sass$/,
-        use:ExtractTextPlugin.extract({
-          fallback: 'vue-style-loader',
-          use: [
-            'css-loader',
-            'sass-loader?indentedSyntax'
-          ]
-        }),
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              // you can specify a publicPath here
+              // by default it uses publicPath in webpackOptions.output
+              publicPath: '../',
+              hmr: process.env.NODE_ENV === 'development',
+            },
+          },
+          'css-loader',
+          'sass-loader',
+        ],
       },
       {
         test: /\.vue$/,
@@ -80,7 +69,10 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin("hyper_editor.css"),
+    new MiniCssExtractPlugin({
+      filename: 'hyper_editor.css'
+    }),
+    new VueLoaderPlugin()
   ],
   resolve: {
     alias: {
@@ -107,12 +99,6 @@ if (process.env.NODE_ENV === 'production') {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"production"'
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false
       }
     }),
     new webpack.LoaderOptionsPlugin({
