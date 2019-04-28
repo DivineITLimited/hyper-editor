@@ -52,7 +52,6 @@ export default {
     position: relative;
     border: 1px dashed rgba(170,170,170,0.4);
     transition: .4s padding ease;
-    padding-top: 25px;
     // &:hover {
     //     padding-top: 25px;
     // }

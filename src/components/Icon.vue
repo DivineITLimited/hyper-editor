@@ -34,7 +34,7 @@ export default {
 
             if (has(MAPPER, this.name)) {
                 return feather.icons[MAPPER[this.name]].toSvg({
-                    'stroke-width': 3
+                    'stroke-width': 2,
                 })
             } else {
                 return this.name

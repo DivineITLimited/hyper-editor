@@ -1,5 +1,5 @@
 <template>
-<div :class="'container-fluid hyp-row ' + hoverClass" @mouseover="onMouseEnter" @mouseout="onMouseLeave">
+<div :class="'hyp-row-wrap ' + hoverClass" @mouseover="onMouseEnter" @mouseout="onMouseLeave">
     <ActionBar
         class="rowActionBar"
         name="Row"
@@ -11,7 +11,7 @@
         :cloneAction="clone"
         :removeAction="remove" />
 
-    <draggable v-if="!collapsed" v-model="children" class="row" :options="{handle:'.cmHandle', animation:150}">
+    <draggable v-if="!collapsed" v-model="children" class="hyp-row" :options="{handle:'.cmHandle', animation:150}">
         <Column v-for="child in children" :key="child.id" :id="child.id" />
     </draggable>
 </div>
@@ -84,14 +84,16 @@ export default {
 
 
 <style lang="scss">
-.hyp-row {
+.hyp-row-wrap {
     width: 100%;
     position: relative;
     transition: .2s padding ease;
     border: 1px dashed rgba(170,170,170,0.4);
-    padding-top:20px;
-    // &:hover {
-    //     padding-top:20px;
-    // }
+    .hyp-row{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+    }
 }
 </style>

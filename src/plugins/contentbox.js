@@ -28,9 +28,15 @@ const contentBox = {
                         model: 'subtitle'
                     },
                     {
-                        type: 'richtext',
-                        label: 'Description',
-                        model: 'description'
+                        type: "richtext",
+                        label: "Description",
+                        model: "description",
+                        placeholder: "Write your description here",
+                        rows: 4,
+                        html: true,
+                        options: {
+                            theme: 'snow'
+                        }
                     }
                 ]
             },

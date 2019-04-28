@@ -6,8 +6,8 @@
         <div slot="footer">
             <p  v-if="children.length <= 0" class="noBlockMessage">Add A Block Here</p>
             <div class="addBlocksButtonWrapper">
-                <b-btn @click="chooseBlock" variant="addBlocksButton btn-info btn-sm">
-                    <icon name="plus-square"></icon>
+                <b-btn @click="chooseBlock" variant="addBlocksButton" title="Add Block">
+                    <icon name="plus"></icon>
                 </b-btn>
             </div>
         </div>
@@ -37,34 +37,39 @@ export default {
             this.$store.commit(SHOW_BLOCK_CHOOSER_FOR, this.id)
         }
     }
-}
-</script>
+};
 
+
+</script>
 <style lang="scss">
 
 
   .addBlocksButtonWrapper{
       text-align: center;
-     .btn{
-        padding: 5px;
-        line-height: 0;
-        color: #dcdbdb;
-        background-color: #f7f7f7;
-        border-color: #ececec;
-        svg{
-          width: 15px;
-          height: 15px;
+      margin-bottom: 8px;
+    b-btn {
+      -webkit-box-shadow: rgba(0,0,0,0.12) 0 1px 4px -1px;
+      box-shadow: rgba(0,0,0,0.12) 0 1px 4px -1px;
+      background-color: #fff;
+      border-radius: 3px;
+      overflow: hidden;
+      margin: 0;
+      padding: 5px 8px;
+      display: inline-flex;
+      i {
+        display: inline-grid;
+        vertical-align: middle;
+        svg {
+          width: 13px;
+          height: 13px;
         }
-       &:active{
-          box-shadow: none !important;
-          outline: none !important;
-       }
-       &:focus{
-         box-shadow: none !important;
-          outline: none !important;
-       }
-     }
-      
+      }
+      &:hover {
+        background: #007bff;
+        color: #fff;
+        cursor: pointer;
+      }
+    }
 
   }
   p.noBlockMessage {

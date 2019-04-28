@@ -1,9 +1,10 @@
 <template>
-  <b-modal v-model="showChooseBlock" size="lg hyp-block-model" ref="blockChooserRef" title="Add New Block" busy
+  <b-modal v-model="showChooseBlock" size="hyp-block-model" class="hyp-block-modal" ref="blockChooserRef"
+           title="Add New Block" busy
            footer-class="invisible">
     <b-row>
       <b-col md='4 hyp-block-model-col' sm='12' v-for="b in availableBlocks" :key="b.name">
-        <b-list-group align="left">
+        <b-list-group class="single-block">
           <b-list-group-item variant="primary hyp-single-block" size="sm" @click="addBlock(b)">
             <h6>{{ b.title }}</h6>
             <p class="card-text">{{ b.description }}</p>
@@ -77,51 +78,51 @@
       padding: 10px 15px;
     }
     .modal-body {
-      .row{
+      .row {
         margin-left: 0;
         margin-right: 0;
         .hyp-block-model-col {
-        padding: 0;
-        margin-bottom: 10px;
-        border-right: 1px solid rgba(0,0,0,0.08);
-        &:last-child {
-          border-right: none;
-        }
-      }
-
-      .hyp-single-block {
-        box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.08);
-        border: none;
-        background: #f5f5f5;
-        border-radius: 0;
-        transition: all 0.3s ease-in;
-        padding: 10px 15px;
-        h6{
-          font-size: 16px;
-          line-height: 16px;
-          color: #0061cc;
-          font-weight: bold;
-          margin-bottom: 2px;
-        }
-        p{
-          font-size: 13px;
-          line-height: 16px;
-          color: #8c8c8c;
-          height: 16px;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          display: -webkit-box;
-          max-height: 16px;
-          -webkit-line-clamp: 1;
-          -webkit-box-orient: vertical;
+          padding: 0;
+          margin-bottom: 10px;
+          border-right: 1px solid rgba(0, 0, 0, 0.08);
+          &:last-child {
+            border-right: none;
+          }
         }
 
-        &:hover{
-          cursor: pointer;
-          box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.1);
-        }
+        .hyp-single-block {
+          box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.08);
+          border: none;
+          background: #f5f5f5;
+          border-radius: 0;
+          transition: all 0.3s ease-in;
+          padding: 10px 15px;
+          h6 {
+            font-size: 16px;
+            line-height: 16px;
+            color: #0061cc;
+            font-weight: bold;
+            margin-bottom: 2px;
+          }
+          p {
+            font-size: 13px;
+            line-height: 16px;
+            color: #8c8c8c;
+            height: 16px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            max-height: 16px;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+          }
 
-      }
+          &:hover {
+            cursor: pointer;
+            box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.1);
+          }
+
+        }
       }
     }
     .modal-footer {
@@ -130,6 +131,47 @@
 
   }
 
+  //single block
+  .hyp-block-modal {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    border: 1px solid #ebebeb;
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-around;
+    align-content: stretch;
+    width: 80%;
+    margin: auto;
+    background: #f5f5f5;
+    padding: 5px;
+    .single-block {
+      -webkit-box-shadow: rgba(0,0,0,0.12) 0 1px 4px -1px;
+      box-shadow: rgba(0,0,0,0.12) 0 1px 4px -1px;
+      background-color: #fff;
+      display: inline-block;
+      border-radius: 4px;
+      margin: 5px;
+      padding: 8px;
+      width: 20%;
+      float: left;
+      h6 {
+        margin: 0 0 4px;
+        font-size: 14px;
+      }
+      p {
+        margin: 0;
+        font-size: 13px;
+      }
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
 
 </style>
 

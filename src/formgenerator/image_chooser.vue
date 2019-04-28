@@ -7,8 +7,8 @@
             <b-col sm='6'>{{ value.title}}</b-col>
         </b-row>
 
-        <b-btn v-b-modal="modalID" size="sm" variant="outline-info">Choose Image</b-btn>
-        <b-btn @click="reset" size="sm" variant="default">Reset</b-btn>
+        <b-btn v-b-modal="modalID" size="sm" class="hyper-btn chooser-btn" variant="outline-info">Choose Image</b-btn>
+        <b-btn @click="reset" size="sm" class="hyper-btn reset-btn" variant="default">Reset</b-btn>
 
         <!-- Modal Component -->
         <b-modal :id="modalID" size='lg' title="Choose Image" @ok="handleOk">
