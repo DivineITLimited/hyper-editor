@@ -1,6 +1,5 @@
 
 import Vue from 'vue'
-import BootstrapVue from 'bootstrap-vue'
 import App from './App.vue'
 
 import store from './store'
@@ -20,11 +19,6 @@ import nestableItem from './plugins/nestableitem'
 import linkBlock from './plugins/linkblock'
 import sliderBlock from './plugins/sliderblock'
 import headingBlock from './plugins/heading'
-
-
-
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 import toggleField from './formgenerator/toggle_button_group'
 import quillEditorField from './formgenerator/quill_editor'
@@ -88,8 +82,6 @@ export default class HyperEditor {
     }
 
     initialize(editorState = []) {
-
-        Vue.use(BootstrapVue)
 
         Vue.component('icon', Icon)
         Vue.component('draggable', draggable)

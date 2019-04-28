@@ -1,10 +1,10 @@
 <template>
     <div>
-        <div class="float-left">
+        <div class="left-align">
             <chrome-picker v-model="color" />
         </div>
-        <div class="float-right">
-            <b-btn variant="default" @click="reset">Reset</b-btn>
+        <div class="right-align">
+            <b-btn variant="default" class="hyper-btn reset-btn" @click="reset">Reset</b-btn>
         </div>
     </div>
 </template>

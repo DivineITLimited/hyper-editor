@@ -16,8 +16,8 @@
             <Row v-for="child in children" :key="child.id" handle='rmHandle' :id="child.id" />
         </draggable> -->
 
-            <Nester :class="'container' + (getSelf.settings.type == 'Fluid' ? '-fluid' : '')" v-if="!collapsed" :id="this.id" />
-      
+            <Nester :class="'hyper-container' + (getSelf.settings.type == 'Fluid' ? '-fluid' : '')" v-if="!collapsed" :id="this.id" />
+
 
     </section>
 </template>
@@ -58,10 +58,14 @@ export default {
 
 <style lang="scss">
 .hyp-section {
-    width: 100%;
+    &:first-child{
+      margin-top:45px;
+    }
+    margin: 0 1%;
     min-height: 20px;
     display: block !important;
     position: relative;
+    background: #f5f5f5;
     border: 1px dashed rgba(170,170,170,0.9);
     .vc-container {
         width: 85%;
@@ -70,5 +74,10 @@ export default {
         margin-top: 0;
         margin-bottom: 20px;
     }
+    .hyper-container{
+      width: 85%;
+      margin: 5px auto;
+    }
 }
+
 </style>

@@ -71,8 +71,9 @@ export default {
     width: 100%;
     background: #f5f5f5;
     border: 1px dashed rgba(170,170,170,0.4);
-    min-height: 30px;
+    min-height: 20px;
     .hyp-block-wrapper{
+      text-align: center;
       padding: 0 15px;
     }
 }

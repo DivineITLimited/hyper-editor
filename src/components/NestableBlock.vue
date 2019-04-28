@@ -12,7 +12,7 @@
             :removeAction="remove" />
 
         <div v-if="!collapsed" class="hyp-block-wrapper">
-            <strong>{{ getSelf.type|capitalize }}</strong>
+            <div>{{ getSelf.type|capitalize }}</div>
             <Nester :id="this.id" />
         </div>
     </div>
