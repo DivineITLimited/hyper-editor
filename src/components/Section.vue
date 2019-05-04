@@ -53,12 +53,11 @@
 
 <style lang="scss">
   .hyp-section {
-    @apply block relative border border-dashed border-grey-light mx-2 bg-grey-lighter;
+    @apply block relative border border-dashed border-grey-light mx-2 bg-grey-lightest;
     min-height: 20px;
   }
 
   .hyp-container {
     @apply mx-2 my-1;
   }
-
 </style>

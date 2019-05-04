@@ -66,16 +66,14 @@ export default {
 
 
 <style lang="scss">
-.hyp-block {
-    position: relative;
-    width: 100%;
-    background: #f5f5f5;
-    border: 1px dashed rgba(170,170,170,0.4);
+  .hyp-block {
+    @apply relative bg-grey-lighter border border-dashed border-grey-light;
     min-height: 20px;
+
     .hyp-block-wrapper{
-      text-align: center;
-      padding: 0 15px;
+      @apply text-center py-4;
     }
-}
+  }
+
 </style>
 
