@@ -12,6 +12,7 @@
         :removeAction="remove" />
 
     <draggable v-if="!collapsed" v-model="children" class="hyp-row" :options="{handle:'.cmHandle', animation:150}">
+
         <Column v-for="child in children" :key="child.id" :id="child.id" />
     </draggable>
 </div>

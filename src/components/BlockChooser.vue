@@ -1,18 +1,22 @@
 <template>
-  <b-modal v-model="showChooseBlock" size="hyp-block-model" class="hyp-block-modal" ref="blockChooserRef"
-           title="Add New Block" busy
-           footer-class="invisible">
-    <b-row>
-      <b-col md='4 hyp-block-model-col' sm='12' v-for="b in availableBlocks" :key="b.name">
-        <b-list-group class="single-block">
-          <b-list-group-item variant="primary hyp-single-block" size="sm" @click="addBlock(b)">
-            <h6>{{ b.title }}</h6>
-            <p class="card-text">{{ b.description }}</p>
-          </b-list-group-item>
-        </b-list-group>
-      </b-col>
-    </b-row>
-  </b-modal>
+  <div class="hyp-bc-wrap" v-bind:class="{open:chooseBlock}" v-on:click.self="hideChooser">
+    <div class="hyp-bc">
+      <button type="button" class="hyp-bc-close" v-on:click="hideChooser">
+        <icon name="times" size="24"></icon>
+      </button>
+      <div class="hyp-bc-heading">
+        <h2 class="hyp-bc-title">Add New Block</h2>
+      </div>
+      <div class="hyp-bc-content">
+        <div class="hyp-bc-single-wrap" @click="addBlock(b)" v-for="b in availableBlocks" :key="b.name">
+          <div class="hyp-bc-single">
+            <h6 class="hyp-bc-single-title">{{ b.title }}</h6>
+            <p class="hyp-bc-single-desc">{{ b.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -21,11 +25,6 @@
 
   export default {
     name: 'blockChooser',
-    data() {
-      return {
-        showChooseBlock: false
-      }
-    },
     computed: {
       chooseBlock() {
         return this.$store.state.chooseBlock
@@ -38,23 +37,7 @@
       }
     },
 
-    watch: {
-      chooseBlock(newValue, oldValue) {
-        if (newValue != oldValue) {
-          if (newValue) {
-            this.$refs.blockChooserRef.show()
-          } else {
-            this.$refs.blockChooserRef.hide()
-          }
-        }
-      },
-
-      showChooseBlock(newValue, oldValue) {
-        if (newValue == false) {
-          this.$store.commit(CLOSE_BLOCK_CHOOSER)
-        }
-      }
-    },
+    watch: {},
 
     methods: {
       addBlock(comp) {
@@ -63,7 +46,11 @@
           parent_id: this.addBlockParentID,
           getters: this.$store.getters
         })
-        this.showChooseBlock = false
+        this.hideChooser()
+      },
+
+      hideChooser() {
+        this.$store.commit(CLOSE_BLOCK_CHOOSER)
       }
     }
   }
@@ -71,107 +58,53 @@
 
 
 <style lang="scss">
-  .hyp-block-model {
-    .modal-header {
-      background: #007bff;
-      color: #fff;
-      padding: 10px 15px;
-    }
-    .modal-body {
-      .row {
-        margin-left: 0;
-        margin-right: 0;
-        .hyp-block-model-col {
-          padding: 0;
-          margin-bottom: 10px;
-          border-right: 1px solid rgba(0, 0, 0, 0.08);
-          &:last-child {
-            border-right: none;
-          }
-        }
+  .hyp-bc-wrap {
+    @apply fixed pin z-50 overflow-auto hidden;
+    background-color: rgba(0, 0, 0, .2);
 
-        .hyp-single-block {
-          box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.08);
-          border: none;
-          background: #f5f5f5;
-          border-radius: 0;
-          transition: all 0.3s ease-in;
-          padding: 10px 15px;
-          h6 {
-            font-size: 16px;
-            line-height: 16px;
-            color: #0061cc;
-            font-weight: bold;
-            margin-bottom: 2px;
-          }
-          p {
-            font-size: 13px;
-            line-height: 16px;
-            color: #8c8c8c;
-            height: 16px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            max-height: 16px;
-            -webkit-line-clamp: 1;
-            -webkit-box-orient: vertical;
-          }
-
-          &:hover {
-            cursor: pointer;
-            box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.1);
-          }
-
-        }
-      }
-    }
-    .modal-footer {
-      display: none;
-    }
-
-  }
-
-  //single block
-  .hyp-block-modal {
-    -webkit-flex-wrap: wrap;
-    flex-wrap: wrap;
-    border: 1px solid #ebebeb;
-    -ms-box-orient: horizontal;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -moz-flex;
-    display: -webkit-flex;
-    display: flex;
-    justify-content: space-around;
-    align-content: stretch;
-    width: 80%;
-    margin: auto;
-    background: #f5f5f5;
-    padding: 5px;
-    .single-block {
-      -webkit-box-shadow: rgba(0,0,0,0.12) 0 1px 4px -1px;
-      box-shadow: rgba(0,0,0,0.12) 0 1px 4px -1px;
-      background-color: #fff;
-      display: inline-block;
-      border-radius: 4px;
-      margin: 5px;
-      padding: 8px;
-      width: 20%;
-      float: left;
-      h6 {
-        margin: 0 0 4px;
-        font-size: 14px;
-      }
-      p {
-        margin: 0;
-        font-size: 13px;
-      }
-      &:hover{
-        cursor: pointer;
-      }
+    &.open {
+      @apply flex;
     }
   }
 
+  .hyp-bc {
+    @apply relative bg-white w-full max-w-md m-auto flex-col flex rounded shadow;
+  }
+
+  .hyp-bc-close {
+    @apply absolute pin-r pin-t mr-3 mt-3 text-grey-dark;
+  }
+
+  .hyp-bc-heading {
+    @apply bg-grey-lighter rounded-t;
+  }
+
+  .hyp-bc-title {
+    @apply text-sm p-4 text-grey-dark;
+  }
+
+  .hyp-bc-content {
+    @apply flex flex-row flex-wrap;
+  }
+
+  .hyp-bc-single-wrap {
+    @apply w-1/3;
+  }
+
+  .hyp-bc-single {
+    @apply shadow rounded m-2 p-2 border border-transparent bg-white cursor-pointer;
+
+    .hyp-bc-single-title {
+      @apply text-sm font-semibold text-grey-darker mb-2;
+    }
+
+    .hyp-bc-single-desc {
+      @apply text-xs text-grey-dark;
+    }
+
+    &:hover {
+      @apply border border-blue;
+    }
+  }
 </style>
 

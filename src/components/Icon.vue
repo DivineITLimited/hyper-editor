@@ -1,13 +1,13 @@
 <template>
-    <i v-html="icon"></i>
+  <i v-html="icon"></i>
 </template>
 
 <script>
 
-import feather from 'feather-icons'
-import { has } from '../helpers'
+  import feather from 'feather-icons'
+  import {has} from '../helpers'
 
-const MAPPER = {
+  const MAPPER = {
     'move': 'move',
     'plus': 'plus',
     'plus-square': 'plus-square',
@@ -25,22 +25,24 @@ const MAPPER = {
     'copy': 'crop',
     'paste': 'clipboard',
     'circle': 'circle'
-}
-export default {
-    props: ['name'],
+  }
+  export default {
+    props: ['name', 'stroke', 'size'],
 
     computed: {
-        icon() {
+      icon() {
 
-            if (has(MAPPER, this.name)) {
-                return feather.icons[MAPPER[this.name]].toSvg({
-                    'stroke-width': 2,
-                })
-            } else {
-                return this.name
-            }
+        if (has(MAPPER, this.name)) {
+          return feather.icons[MAPPER[this.name]].toSvg({
+            'stroke-width': (this.stroke) ? this.stroke : 2,
+            'width': (this.size) ? this.size : 12,
+            'height': (this.size) ? this.size : 12
+          })
+        } else {
+          return this.name
         }
+      }
     }
-}
+  }
 
 </script>
