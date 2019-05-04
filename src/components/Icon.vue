@@ -27,14 +27,16 @@ const MAPPER = {
     'circle': 'circle'
 }
 export default {
-    props: ['name'],
+    props: ['name', 'stroke', 'size'],
 
     computed: {
         icon() {
 
             if (has(MAPPER, this.name)) {
                 return feather.icons[MAPPER[this.name]].toSvg({
-                    'stroke-width': 3
+                    'stroke-width': (this.stroke) ? this.stroke : 2,
+                    'width': (this.size) ? this.size : 12,
+                    'height': (this.size) ? this.size : 12
                 })
             } else {
                 return this.name
