@@ -43,6 +43,7 @@ import draggable from 'vuedraggable'
 
 
 import './assets/css/reset.css'
+import './assets/css/devhelper.css'
 
 export default class HyperEditor {
 

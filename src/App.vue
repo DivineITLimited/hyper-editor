@@ -111,17 +111,24 @@
 </script>
 
 <style lang="scss">
+
+  .hyp-app {
+    @apply font-sans;
+  }
+
   .hyp-topbar {
     @apply bg-white my-4 inline-flex flex-row shadow ml-2;
   }
 
   .hyp-topbar-btn {
+
     @apply bg-white text-grey-darkest font-semibold py-1 px-4 border-r border-grey-light;
     transition: .2s ease;
 
     &:focus {
       @apply outline-none;
     }
+
     &:first-child {
       @apply rounded-l;
     }
@@ -133,14 +140,17 @@
     &:hover, &.active {
       @apply bg-blue text-white;
     }
+
   }
 
   .hyp-source {
+
     @apply bg-grey-lighter appearance-none border-2 border-grey-lighter
     rounded w-full py-2 px-4 text-grey-darker leading-tight text-sm h-64;
 
     &:focus {
-      @apply outline-none bg-white border-grey-light
-      }
+      @apply outline-none bg-white border-grey-light;
+    }
+
   }
 </style>
