@@ -1,57 +1,57 @@
 <template>
   <div class="editPanel">
-    <div class="editPanelActionBar">
-      <b-btn v-if="copyPasteEnabled" variant="default" @click="copy" class="copy" title="Copy">
+    <div class="text-right">
+      <button v-if="copyPasteEnabled" @click="copy" class="hyp-edit-panel-btn" title="Copy">
         <icon name="copy"></icon>
-      </b-btn>
-      <b-btn v-if="copyPasteEnabled" variant="default" @click="paste" class="paste" title="Paste">
+      </button>
+      <button v-if="copyPasteEnabled" @click="paste" class="hyp-edit-panel-btn" title="Paste">
         <icon name="paste"></icon>
-      </b-btn>
-      <b-btn variant="success" @click="save" class="save" title="Save">
+      </button>
+      <button variant="success" @click="save" class="hyp-edit-panel-btn save" title="Save">
         <icon name="save"></icon>
-      </b-btn>
-      <b-btn @click="close" variant="danger" class="close" title="Close">
+      </button>
+      <button @click="close" class="hyp-edit-panel-btn" title="Close">
         <icon name="times"></icon>
-      </b-btn>
+      </button>
     </div>
-    <b-tabs class="hyp-edit-panel-wrap">
-
-      <b-tab title="Settings" active>
-
-        <vue-form-generator :schema="settings_schema" id="setting" :model="settings_model"></vue-form-generator>
-      </b-tab>
-      <b-tab title="General">
-        <vue-form-generator :schema="general_schema" id="general" :model="general_model"></vue-form-generator>
-      </b-tab>
-      <b-tab title="Extra">
-
-        <b-tabs class="hyp-edit-panel-wrap" id="extra">
-          <b-tab title="CSS">
-            <textarea class="form-control" v-model="extra.cssCode"></textarea>
-          </b-tab>
-          <b-tab title="JS">
-            <textarea class="form-control" v-model="extra.jsCode"></textarea>
-          </b-tab>
-          <b-tab title="HTML">
-            <textarea class="form-control" v-model="extra.htmlCode"></textarea>
-          </b-tab>
-        </b-tabs>
-      </b-tab>
-
-    </b-tabs>
+    <div class="hyp-edit-panel-wrap">
+      <Tab>
+        <TabItem name="Settings" :selected="true">
+          <vue-form-generator :schema="settings_schema" id="setting" :model="settings_model"></vue-form-generator>
+        </TabItem>
+        <TabItem name="General">
+          <vue-form-generator :schema="general_schema" id="general" :model="general_model"></vue-form-generator>
+        </TabItem>
+        <TabItem name="Extra">
+          <Tab>
+            <TabItem name="CSS" :selected="true">
+              <textarea class="form-control" v-model="extra.cssCode"></textarea>
+            </TabItem>
+            <TabItem name="JS">
+              <textarea class="form-control" v-model="extra.jsCode"></textarea>
+            </TabItem>
+            <TabItem name="HTML">
+              <textarea class="form-control" v-model="extra.htmlCode"></textarea>
+            </TabItem>
+          </Tab>
+        </TabItem>
+      </Tab>
+    </div>
 
   </div>
 </template>
 
 <script>
 
-  import {has} from '../helpers'
+  import {has} from '../../helpers'
+  import Tab from './Tab'
+  import TabItem from './TabItem'
 
-  import {CLOSE_EDIT_PANEL, UPDATE_COMPONENT} from '../mutation-types'
+  import {CLOSE_EDIT_PANEL, UPDATE_COMPONENT} from '../../mutation-types'
 
   export default {
     name: 'editPanel',
-
+    components: {Tab, TabItem},
     data() {
       return {
 
@@ -249,6 +249,22 @@
 </script>
 
 <style lang="scss">
+
+  .hyp-edit-panel-btn {
+    @apply px-3 py-1 bg-white rounded shadow;
+
+    &:hover {
+      @apply bg-blue text-white;
+    }
+
+    &.save {
+      @apply  bg-green text-white;
+      &:hover {
+        @apply bg-green-dark;
+      }
+    }
+  }
+
   .editPanel {
     max-width: 350px;
     min-width: 350px;
@@ -300,7 +316,6 @@
         ul {
           width: 100%;
           text-align: justify;
-          background: #eee;
           li {
             margin-bottom: 0;
             a {

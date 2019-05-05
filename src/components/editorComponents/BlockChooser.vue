@@ -21,7 +21,7 @@
 
 <script>
 
-  import {CLOSE_BLOCK_CHOOSER, ADD_COMPONENT} from '../mutation-types'
+  import {CLOSE_BLOCK_CHOOSER, ADD_COMPONENT} from '../../mutation-types'
 
   export default {
     name: 'blockChooser',

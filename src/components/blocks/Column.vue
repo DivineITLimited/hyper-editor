@@ -24,8 +24,8 @@
 
 <script>
 
-import { removeable, cloneable, editable, childsortable, hasHoverControl } from '../mixins/base'
-import { SHOW_BLOCK_CHOOSER_FOR, REARRANGE_EDITOR } from '../mutation-types'
+import { removeable, cloneable, editable, childsortable, hasHoverControl } from '../../mixins/base'
+import { SHOW_BLOCK_CHOOSER_FOR, REARRANGE_EDITOR } from '../../mutation-types'
 import Block from './Block'
 import draggable from 'vuedraggable'
 

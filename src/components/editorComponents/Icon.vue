@@ -5,7 +5,7 @@
 <script>
 
   import feather from 'feather-icons'
-  import {has} from '../helpers'
+  import {has} from '../../helpers'
 
   const MAPPER = {
     'move': 'move',

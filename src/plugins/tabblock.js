@@ -1,4 +1,4 @@
-import TabBlock from '../components/TabBlock'
+import TabBlock from '../components/blocks/TabBlock'
 import { unique_id } from '../helpers'
 const tabBlock = {
 

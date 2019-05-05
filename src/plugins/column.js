@@ -1,4 +1,4 @@
-import Column from '../components/Column'
+import Column from '../components/blocks/Column'
 
 const AVAILABLE_SIZES = [1,2,3,4,5,6,7,8,9,10,11,12]
 const AVAILABLE_OFFSETS = [0,1,2,3,4,5,6,7,8,9,10,11]

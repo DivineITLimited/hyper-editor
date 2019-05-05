@@ -1,4 +1,4 @@
-import NestableItem from '../components/NestableItem'
+import NestableItem from '../components/editorComponents/NestableItem'
 const nestableItem = {
     view_as_block: false,
     title: 'NestableItem',

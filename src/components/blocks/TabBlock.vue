@@ -32,8 +32,8 @@
 
 
 <script>
-import { childsortable, collapseable, hasHoverControl } from '../mixins/base'
-import { ADD_COMPONENT } from '../mutation-types'
+import { childsortable, collapseable, hasHoverControl } from '../../mixins/base'
+import { ADD_COMPONENT } from '../../mutation-types'
 import Block from './Block'
 
 export default {

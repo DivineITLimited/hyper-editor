@@ -15,9 +15,9 @@
 
 <script>
   import draggable from 'vuedraggable'
-  import {removeable, cloneable, editable, childsortable} from '../mixins/base'
-  import {SHOW_BLOCK_CHOOSER_FOR, REARRANGE_EDITOR} from '../mutation-types'
-  import Block from './Block'
+  import {removeable, cloneable, editable, childsortable} from '../../mixins/base'
+  import {SHOW_BLOCK_CHOOSER_FOR, REARRANGE_EDITOR} from '../../mutation-types'
+  import Block from '../blocks/Block'
 
   export default {
     props: ['id'],

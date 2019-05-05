@@ -1,4 +1,4 @@
-import Block from '../components/Block'
+import Block from '../components/blocks/Block'
 const sliderBlock = {
 
     title: 'Slider',

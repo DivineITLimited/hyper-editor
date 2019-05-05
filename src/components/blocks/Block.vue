@@ -20,7 +20,7 @@
 
 
 <script>
-import { cloneable, removeable, editable, collapseable, hasHoverControl } from '../mixins/base'
+import { cloneable, removeable, editable, collapseable, hasHoverControl } from '../../mixins/base'
 
 export default {
     name:'block',

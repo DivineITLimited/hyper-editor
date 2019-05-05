@@ -33,9 +33,9 @@
 
 <script>
   import draggable from 'vuedraggable'
-  import ESection from './components/Section'
-  import EditPanel from './components/EditPanel'
-  import BlockChooser from './components/BlockChooser'
+  import ESection from './components/blocks/Section'
+  import EditPanel from './components/editorComponents/EditPanel'
+  import BlockChooser from './components/editorComponents/BlockChooser'
   import {ADD_COMPONENT, REARRANGE_EDITOR} from './mutation-types'
   import {undoRedoHistory} from './undoredo'
 
@@ -118,6 +118,7 @@
 
   .hyp-topbar {
     @apply bg-white my-4 inline-flex flex-row shadow ml-2;
+    transition: .5s ease;
   }
 
   .hyp-topbar-btn {

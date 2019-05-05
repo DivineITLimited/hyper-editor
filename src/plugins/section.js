@@ -1,4 +1,4 @@
-import Section from '../components/Section'
+import Section from '../components/blocks/Section'
 
 const sectionPlugin = {
     view_as_block: false,

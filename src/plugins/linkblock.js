@@ -1,4 +1,4 @@
-import NestableBlock from '../components/NestableBlock'
+import NestableBlock from '../components/blocks/NestableBlock'
 
 const textBlock = {
 

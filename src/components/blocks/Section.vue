@@ -21,8 +21,8 @@
 
   import Row from './Row'
   import draggable from 'vuedraggable'
-  import {ADD_COMPONENT, REARRANGE_EDITOR, REMOVE_COMPONENT} from '../mutation-types'
-  import {cloneable, removeable, editable, collapseable, hasHoverControl} from '../mixins/base'
+  import {ADD_COMPONENT, REARRANGE_EDITOR, REMOVE_COMPONENT} from '../../mutation-types'
+  import {cloneable, removeable, editable, collapseable, hasHoverControl} from '../../mixins/base'
 
   export default {
     name: 'eSection',

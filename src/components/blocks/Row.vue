@@ -21,8 +21,8 @@
 <script>
 
 import draggable from 'vuedraggable'
-import { ADD_COMPONENT, REARRANGE_EDITOR, REMOVE_COMPONENT, UPDATE_COLUMN_SIZE_FOR_ALL_CHILD } from '../mutation-types'
-import { cloneable, removeable, collapseable, hasHoverControl } from '../mixins/base'
+import { ADD_COMPONENT, REARRANGE_EDITOR, REMOVE_COMPONENT, UPDATE_COLUMN_SIZE_FOR_ALL_CHILD } from '../../mutation-types'
+import { cloneable, removeable, collapseable, hasHoverControl } from '../../mixins/base'
 
 export default {
     name: 'Row',
