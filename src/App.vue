@@ -34,8 +34,8 @@
 <script>
   import draggable from 'vuedraggable'
   import ESection from './components/blocks/Section'
-  import EditPanel from './components/editorComponents/EditPanel'
-  import BlockChooser from './components/editorComponents/BlockChooser'
+  import EditPanel from './components/editor/EditPanel'
+  import BlockChooser from './components/editor/BlockChooser'
   import {ADD_COMPONENT, REARRANGE_EDITOR} from './mutation-types'
   import {undoRedoHistory} from './undoredo'
 
