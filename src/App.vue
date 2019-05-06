@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="hyp-app">
     <div class="hyp-topbar">
-      <button class="hyp-topbar-btn" type="button" @click="createSection">
+      <button class="hyp-topbar-btn" type="button" @click="createSection" title="Add New Section">
         <icon name="plus" stroke="3"></icon>
       </button>
       <button class="hyp-topbar-btn" type="button" @click="undo" variant="primary btn-sm" title="Undo">
@@ -10,7 +10,7 @@
       <button class="hyp-topbar-btn" type="button" @click="redo" variant="danger btn-sm" title="Redo">
         <icon name='redo' stroke="3"></icon>
       </button>
-      <button class="hyp-topbar-btn" type="button" @click="sourceToggle" :class="{'active': viewSource}">
+      <button class="hyp-topbar-btn" type="button" @click="sourceToggle" :class="{'active': viewSource}" title="Copy Json">
         <icon name='code' stroke="3"></icon>
       </button>
     </div>
@@ -113,19 +113,17 @@
 <style lang="scss">
 
   .hyp-app {
-    @apply font-sans;
+    @apply font-sans relative block h-full overflow-hidden mt-12;
   }
 
   .hyp-topbar {
-    @apply bg-white my-4 inline-flex flex-row shadow ml-2;
+    @apply bg-grey-lighter border-b overflow-hidden w-full fixed z-40 pin-t p-2;
     transition: .5s ease;
   }
 
   .hyp-topbar-btn {
-
-    @apply bg-white text-grey-darkest font-semibold py-1 px-4 border-r border-grey-light;
+    @apply bg-white text-grey-darkest font-semibold p-1 px-3 shadow rounded border-grey-light;
     transition: .2s ease;
-
     &:focus {
       @apply outline-none;
     }

@@ -50,7 +50,7 @@
   }
 
   .hyp-nester-add-btn {
-    @apply px-2 rounded bg-white shadow text-grey-dark mt-1;
+    @apply px-2 rounded bg-white shadow text-grey-darkest mt-1;
     padding-top: .2rem;
     padding-bottom: .2rem;
     &:focus {

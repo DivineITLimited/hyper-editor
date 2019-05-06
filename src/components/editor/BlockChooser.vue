@@ -2,7 +2,7 @@
   <div class="hyp-bc-wrap" v-bind:class="{open:chooseBlock}" v-on:click.self="hideChooser">
     <div class="hyp-bc">
       <button type="button" class="hyp-bc-close" v-on:click="hideChooser">
-        <icon name="times" size="24"></icon>
+        <icon name="times" size="18" title="Close"></icon>
       </button>
       <div class="hyp-bc-heading">
         <h2 class="hyp-bc-title">Add New Block</h2>
@@ -61,50 +61,66 @@
   .hyp-bc-wrap {
     @apply fixed pin z-50 overflow-auto hidden;
     background-color: rgba(0, 0, 0, .2);
-
     &.open {
       @apply flex;
     }
   }
 
   .hyp-bc {
-    @apply relative bg-white w-full max-w-md m-auto flex-col flex rounded shadow;
+    @apply relative p-4 m-auto flex-wrap block bg-grey-lighter content-around rounded w-5/6;
+    .hyp-bc-content {
+      @apply flex-wrap;
+        grid-auto-flow: dense;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      .hyp-bc-single-wrap{
+        @apply flex flex-col;
+        .hyp-bc-single {
+          @apply shadow rounded m-1 p-3 border border-transparent bg-white cursor-pointer;
+           transition: .2s ease-out;
+          .hyp-bc-single-title {
+            @apply text-sm font-semibold text-grey-darkest mb-2;
+          }
+
+          .hyp-bc-single-desc {
+            @apply text-xs text-grey-dark;
+          }
+
+          &:hover {
+            @apply bg-blue;
+            .hyp-bc-single-title {
+              @apply text-white;
+            }
+
+            .hyp-bc-single-desc {
+              @apply text-white;
+            }
+          }
+        }
+      }
+    }
   }
+  @screen sm {
+    .hyp-bc{
+      @apply w-3/4;
+    }
+  }
+
 
   .hyp-bc-close {
     @apply absolute pin-r pin-t mr-3 mt-3 text-grey-dark;
+    &:hover{
+      @apply text-red;
+    }
   }
 
   .hyp-bc-heading {
-    @apply bg-grey-lighter rounded-t;
+    @apply bg-grey-lighter rounded-t pb-3;
   }
 
   .hyp-bc-title {
-    @apply text-sm p-4 text-grey-dark;
+    @apply text-sm text-grey-dark pl-1;
   }
 
-  .hyp-bc-content {
-    @apply flex flex-row flex-wrap;
-  }
-
-  .hyp-bc-single-wrap {
-    @apply w-1/3;
-  }
-
-  .hyp-bc-single {
-    @apply shadow rounded m-2 p-2 border border-transparent bg-white cursor-pointer;
-
-    .hyp-bc-single-title {
-      @apply text-sm font-semibold text-grey-darker mb-2;
-    }
-
-    .hyp-bc-single-desc {
-      @apply text-xs text-grey-dark;
-    }
-
-    &:hover {
-      @apply border border-blue;
-    }
-  }
 </style>
 

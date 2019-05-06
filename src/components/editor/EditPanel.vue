@@ -1,17 +1,17 @@
 <template>
   <div class="editPanel">
-    <div class="text-right">
+    <div class="edit-panel-topbar">
       <button v-if="copyPasteEnabled" @click="copy" class="hyp-edit-panel-btn" title="Copy">
-        <icon name="copy"></icon>
+        <icon name="copy" stroke="3"></icon>
       </button>
       <button v-if="copyPasteEnabled" @click="paste" class="hyp-edit-panel-btn" title="Paste">
-        <icon name="paste"></icon>
+        <icon name="paste" stroke="3"></icon>
       </button>
       <button variant="success" @click="save" class="hyp-edit-panel-btn save" title="Save">
-        <icon name="save"></icon>
+        <icon name="save" stroke="3"></icon>
       </button>
-      <button @click="close" class="hyp-edit-panel-btn" title="Close">
-        <icon name="times"></icon>
+      <button @click="close" class="hyp-edit-panel-btn close" title="Close">
+        <icon name="times" stroke="3"></icon>
       </button>
     </div>
     <div class="hyp-edit-panel-wrap">
@@ -25,13 +25,13 @@
         <TabItem name="Extra">
           <Tab>
             <TabItem name="CSS" :selected="true">
-              <textarea class="form-control" v-model="extra.cssCode"></textarea>
+              <textarea class="hyp-form-control" v-model="extra.cssCode"></textarea>
             </TabItem>
             <TabItem name="JS">
-              <textarea class="form-control" v-model="extra.jsCode"></textarea>
+              <textarea class="hyp-form-control" v-model="extra.jsCode"></textarea>
             </TabItem>
             <TabItem name="HTML">
-              <textarea class="form-control" v-model="extra.htmlCode"></textarea>
+              <textarea class="hyp-form-control" v-model="extra.htmlCode"></textarea>
             </TabItem>
           </Tab>
         </TabItem>
@@ -53,9 +53,7 @@
     name: 'editPanel',
     components: {Tab, TabItem},
     data() {
-      return {
-
-      }
+      return {}
     },
 
     mounted() {
@@ -77,8 +75,6 @@
       }
 
     },
-
-
 
 
     computed: {
@@ -250,124 +246,60 @@
 
 <style lang="scss">
 
-  .hyp-edit-panel-btn {
-    @apply px-3 py-1 bg-white rounded shadow;
-
-    &:hover {
-      @apply bg-blue text-white;
-    }
-
-    &.save {
-      @apply  bg-green text-white;
-      &:hover {
-        @apply bg-green-dark;
-      }
-    }
-  }
-
   .editPanel {
-    max-width: 350px;
-    min-width: 350px;
-    overflow-y: scroll;
-    min-height: 100%;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background: #f5f5f5;
-    box-shadow: 0 0 4px 0 #ddd;
-    padding: 15px;
-    z-index: 6000;
-    /*top edit panel bar*/
-    .editPanelActionBar {
-      margin-bottom: 15px;
-      text-align: right;
-      b-btn {
-        -webkit-box-shadow: rgba(0, 0, 0, 0.12) 0 1px 4px -1px;
-        box-shadow: rgba(0, 0, 0, 0.12) 0 1px 4px -1px;
-        background-color: #fff;
-        border-radius: 3px;
-        overflow: hidden;
-        margin: 0;
-        padding: 5px 8px;
-        display: inline-flex;
-        i {
-          display: inline-grid;
-          vertical-align: middle;
-          svg {
-            width: 13px;
-            height: 13px;
-          }
-        }
+    @apply fixed z-50 border-l pin-t pin-b pin-r bg-grey-lighter;
+    min-width: 320px;
+    max-width: 320px;
+    //edit panel topbar
+    .edit-panel-topbar {
+      @apply text-right p-2 border-b;
+      .hyp-edit-panel-btn {
+        @apply px-3 py-1 bg-white rounded shadow;
+
         &:hover {
-          background: #007bff;
-          color: #fff;
-          cursor: pointer;
+          @apply bg-blue text-white;
+        }
+
+        &.save {
+          @apply bg-green text-white;
+          &:hover {
+            @apply bg-green-dark;
+          }
+        }
+        &.close {
+          @apply bg-grey-dark text-white;
+          &:hover {
+            @apply bg-red-dark;
+          }
         }
       }
-
     }
-
-    /*hyper edit panel wrap*/
+    //hyper edit panel wrap
     .hyp-edit-panel-wrap {
-      height: 100%;
-      position: relative;
-      div {
-        ul {
-          width: 100%;
-          text-align: justify;
-          li {
-            margin-bottom: 0;
-            a {
-              font-size: 14px;
-              line-height: 14px;
-            }
-            a.nav-link {
-              border: none;
-              border-radius: 0;
-              .active {
-                border: none;
-                border-radius: 0;
+      @apply h-full relative bg-white;
+      .tabs-details {
+        @apply p-3;
+        .vue-form-generator {
+          fieldset {
+            .form-group {
+              label{
+                span{
+                  @apply text-grey-darker font-medium;
+                }
               }
-            }
-          }
-          &:focus {
-            outline: none;
-          }
-        }
-
-      }
-      .tab-content {
-        fieldset {
-          .form-group {
-            .field-wrap {
-              select.form-control {
-                font-size: 14px;
-                padding: 4px 10px;
-                height: 30px;
-                border-radius: 3px;
-                width: 100%;
-                border: 1px solid #ebebeb;
-              }
-            }
-          }
-        }
-      }
-
-      .vue-form-generator{
-        fieldset{
-          .form-group{
-            padding: 12px;
-            .field-wrap{
-              .form-control{
-                font-size: 14px;
-                padding: 4px 10px;
-                height: 32px;
-                border-radius: 3px;
-                width: 100%;
-                border: 1px solid #ebebeb;
-                background: #f9f9f9;
-                color: #848484;
+              .field-wrap {
+                .form-control {
+                  @apply text-sm text-grey-darker bg-grey-lightest w-full p-2 leading-tight border rounded;
+                  &:focus{
+                    @apply border-blue;
+                  }
+                }
+                select.form-control{
+                  @apply text-sm;
+                  &:focus{
+                    @apply border-blue;
+                  }
+                }
               }
             }
           }
@@ -375,7 +307,7 @@
       }
 
       //custom html
-      textarea.form-control{
+      textarea.form-control {
         font-size: 14px;
         padding: 4px 10px;
         height: 32px;
@@ -386,34 +318,12 @@
         color: #848484;
       }
     }
+  }
 
-    fieldset{
-      fieldset{
-        .form-group{
-          label{
-            span{
-              font-size: 13px;
-              font-weight: normal;
-            }
-          }
-        }
-      }
-    }
+  .editPanel {
 
     fieldset {
-      border: 1px solid #ebebeb;
-      margin: 5px 0;
-      position: relative;
-      display: block;
-      background-color: #fff;
-      border-radius: 4px;
-      width: 100%;
-      overflow: hidden;
-      padding: 0;
       input {
-        .form-control {
-
-        }
         &:active {
           box-shadow: none;
           outline: none;
@@ -462,12 +372,9 @@
         .field-wrap {
           .wrapper {
             position: relative;
-
             .form-control {
               padding: 8px 10px;
               border-radius: 3px;
-              width: 100%;
-              border: 1px solid #ebebeb;
               box-sizing: border-box;
             }
           }
@@ -489,42 +396,38 @@
 
         }
       }
-      .form-group + .form-group{
+      .form-group + .form-group {
         padding-top: 0 !important;
       }
     }
 
     fieldset.willcollapse div.form-group {
-      display: none;
-      transition: all 0.3s ease-in;
+      @apply hidden;
     }
     fieldset.willcollapse.active div.form-group {
-      display: block;
-      transition: all 0.3s ease-in-out;
-      padding: 12px;
+      @apply block pt-2 pb-2;
     }
 
-    .ql-toolbar.ql-snow + .ql-container.ql-snow{
+    .ql-toolbar.ql-snow + .ql-container.ql-snow {
       position: relative;
       display: block;
       overflow: hidden;
       width: 100%;
-      .ql-editor{
+      .ql-editor {
         max-height: 200px;
         overflow-y: scroll;
       }
     }
-    .ql-snow .ql-tooltip{
+    .ql-snow .ql-tooltip {
       border: none;
       background: #ebebeb;
       transform: none;
       position: relative;
       left: 0 !important;
-      right: 0!important;
+      right: 0 !important;
       margin-top: 0 !important;
       top: 0 !important;
     }
-
 
   }
 </style>

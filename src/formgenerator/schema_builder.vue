@@ -1,16 +1,16 @@
 <template>
     <div>
-        <b-btn variant="primary" size="sm" v-b-modal="shemaModalID">Build Schema</b-btn>
-        <b-btn variant="primary" size="sm" @click="newItem">Add Item</b-btn>
+        <button variant="primary" size="sm" v-b-modal="shemaModalID">Build Schema</button>
+        <button variant="primary" size="sm" @click="newItem">Add Item</button>
 
         <b-modal ref="editModalRef" size="lg" title="Add New Item" @ok="updated">
-            <div class="form-group mb-1" v-if="editPanelItem">
+            <div class="hyp-form-group" v-if="editPanelItem">
                 <label>Title</label>
                 <b-form-input v-model="editPanelItem.title" type="text" />
             </div>
             <b-card v-if="editPanelItem" v-for="(group, i) in schemaValue.groups" :key="'group_' + i" class="mb-1">
                 {{ group.title }}
-                <div class="form-group" v-for="(attr, j) in group.attrs" :key="'attr_'+i+'_'+j">
+                <div class="hyp-form-group" v-for="(attr, j) in group.attrs" :key="'attr_'+i+'_'+j">
                     <label :for="'attr_'+i+'_'+j">{{ attr.title }}</label>
                     <b-form-input :id="'attr_'+i+'_'+j" v-model="editPanelItem[attr.id]"
                       type="text" />

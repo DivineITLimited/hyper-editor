@@ -34,26 +34,21 @@
 
 <style type="text/scss">
   .hyp-tab-wrap {
-    @apply mt-2 mb-2;
-
+    @apply h-full overflow-y-auto;
     ul.hyp-tab {
-      @apply list-reset flex flex-row;
-
+      @apply list-reset flex flex-row bg-grey-light;
       li.hyp-tab-item {
         @apply flex-1 text-center;
-
         a.hyp-tab-item-link {
-          @apply block py-2 no-underline border-b text-grey-dark;
-
-
+          @apply block py-2 no-underline text-grey-darkest;
           &:hover {
             @apply border-blue;
           }
         }
-
         &.is-active {
+          @apply bg-grey-lighter;
           a.hyp-tab-item-link {
-            @apply border-blue bg-white rounded-t;
+            @apply text-grey-darkest rounded-t;
           }
         }
       }
