@@ -1,9 +1,9 @@
 <template>
-    <b-button-group size="sm">
-      <b-button v-for="item in buttons" @click="sync(item)" :class="{'active': value && item.value == value }" variant="outline-info" :key="item.value">
+    <div class="hyp-btn-group">
+      <button v-for="item in buttons" class="group-btn" @click="sync(item)" :class="{'active': value && item.value == value }" variant="outline-info" :key="item.value">
         {{ item.title }}
-      </b-button>
-    </b-button-group>
+      </button>
+    </div>
 </template>
 
 <script>
@@ -43,5 +43,25 @@ export default {
 </script>
 
 <style lang="scss">
-
+  .hyp-btn-group{
+    @apply inline-flex;
+    .group-btn{
+      @apply bg-grey-light text-grey-darker py-1 px-3 text-sm;
+      &:hover{
+        @apply bg-blue text-white;
+      }
+      &:focus{
+        @apply outline-none;
+      }
+    }
+    .group-btn.active{
+      @apply bg-blue text-white;
+    }
+    button:first-child{
+      @apply rounded-l-sm;
+    }
+    button:last-child{
+      @apply rounded-r-sm;
+    }
+  }
 </style>

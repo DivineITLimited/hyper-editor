@@ -49,12 +49,6 @@
   .showControl > .vc-action-bar:first-child {
     visibility: visible
   }
-  .left-align{
-    float: left;
-  }
-  .right-align{
-    float: right;
-  }
   .vc-action-bar {
     position: absolute;
     visibility: hidden;

@@ -1,12 +1,14 @@
 <template>
-    <div>
-        <div class="left-align">
-            <chrome-picker v-model="color" />
-        </div>
-        <div class="right-align">
-            <b-btn variant="default" class="hyper-btn reset-btn" @click="reset">Reset</b-btn>
-        </div>
-    </div>
+   <div class="hyp-colorpicker">
+      <div class="left-align">
+          <chrome-picker v-model="color" />
+      </div>
+      <div class="right-align">
+        <button class="reset-btn" @click="reset">
+          Reset
+        </button>
+      </div>
+   </div>
 </template>
 
 <script>
@@ -53,3 +55,22 @@ export default {
     }
 }
 </script>
+
+<style lang="scss">
+  .reset-btn{
+    @apply border bg-grey-lightest text-sm py-1 px-3 rounded text-grey-darker;
+    &:hover{
+      @apply bg-blue text-white;
+    }
+    &:focus{
+      @apply outline-none;
+    }
+  }
+
+  .hyp-colorpicker{
+    @apply relative;
+    .vc-chrome{
+      @apply shadow-none relative w-full pin-t;
+    }
+  }
+</style>

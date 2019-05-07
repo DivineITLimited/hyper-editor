@@ -3,19 +3,23 @@
         <draggable v-model="objects" v-bind="{handle:'.itemHandle', animation:150}">
             <div class="singleObjectWrapper" v-for="(item, i) in objects" :key="`'mo-' + ${i}`">
                 <div class="actions">
-                    <b-button size="sm" class="itemHandle" variant="outline-info"><icon name="move" /></b-button>
-                    <b-button size="sm" @click="removeObject(i)" variant="outline-danger"><icon name="times" /></b-button>
-                    <b-button size="sm" @click="collapse(i)" variant="outline-default">
-                        <icon v-if="item.collapsed" name="collapse-close" />
-                        <icon v-else name="collapse-open" />
-                    </b-button>
+                    <button class="itemHandle action-btn move">
+                      <icon name="move" title="Move"/>
+                    </button>
+                    <button @click="removeObject(i)" class="action-btn delete">
+                      <icon name="delete" title="Delete"/>
+                    </button>
+                    <button @click="collapse(i)" class="action-btn collapse">
+                        <icon v-if="item.collapsed" name="collapse-close" stroke="2" title="Expand"/>
+                        <icon v-else name="collapse-open" title="Collapse"/>
+                    </button>
                 </div>
                 <vue-form-generator :schema="schema.object_schema" :class="{'collapsed': item.collapsed}" :model="item.model"></vue-form-generator>
             </div>
         </draggable>
-        <b-button slot="footer" class="addItemBtn" @click="newObject" size="sm" variant="outline-info">
-            <icon name="plus" class="hyper-btn chooser-btn"/>
-        </b-button>
+        <button slot="footer" class="addItemBtn" @click="newObject" size="sm" variant="outline-info">
+            <icon name="plus" class="chooser-btn" title="Add New"/>
+        </button>
     </div>
 </template>
 
@@ -83,55 +87,50 @@ export default {
 </script>
 
 <style lang="scss">
-.hyper-multiObjWrapper {
+  .hyper-multiObjWrapper {
     .singleObjectWrapper {
-        border: 1px solid #ebebeb;
-        margin-top: 5px;
-        margin-bottom: 5px;
-        .actions {
-            background: #f5f5f5;
-            padding: 4px;
-             b-button {
-            -webkit-box-shadow: rgba(0,0,0,0.12) 0 1px 4px -1px;
-            box-shadow: rgba(0,0,0,0.12) 0 1px 4px -1px;
-            background-color: #fff;
-            border-radius: 3px;
-            overflow: hidden;
-            margin: 0;
-            padding: 5px 8px;
-            display: inline-flex;
-          i{
-            display: inline-grid;
-            vertical-align: middle;
-            svg {
-              width: 13px;
-              height: 13px;
-            }
-          }
-
-          &:hover {
-            cursor: pointer;
-            background: #007bff;
-            border-color: #007bff;
-            svg {
-              color: #fff;
-            }
+      @apply border border-grey-light mt-1 mb-1 rounded;
+      .actions {
+         @apply bg-grey-light p-1;
+          button{
+            @apply inline-flex overflow-hidden px-1 text-blue;
+            &:hover {
+            @apply cursor-pointer text-blue-darkest;
           }
         }
+        button:focus{
+          @apply outline-none border-none;
         }
-        fieldset{
-          box-shadow: none;
-          border: none;
+        button.action-btn.move{
+          @apply cursor-move;
+        }
+        button.action-btn.delete{
+         &:hover{
+            @apply text-red;
+         }
+        }
+        button.action-btn.collapse{
+          @apply flex justify-end inline-flex m-auto float-right;
+        }
+      }
+      .vue-form-generator{
+        @apply p-3 bg-white;
+        .form-group{
+          @apply pb-3;
           .field-wrap{
             position: relative;
             display: block;
             .wrapper{
-              .form-control{
-
+              input.form-control, textarea.form-control{
+                @apply bg-grey-lighter;
               }
             }
           }
         }
+        .form-group:last-child{
+          @apply pb-0;
+        }
+      }
     }
     .addItemBtn {
         line-height: 0;
@@ -157,7 +156,7 @@ export default {
     }
     .collapsed {
         display: none
-    }
+  }
 }
 
 </style>

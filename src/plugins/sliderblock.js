@@ -28,9 +28,16 @@ const sliderBlock = {
                             model: 'subTitle'
                         },
                         {
-                            type: 'richtext',
-                            label: 'Short Description',
-                            model: 'shortDescription'
+                            type: "richtext",
+                            label: "Short Description",
+                            model: "shortDescription",
+                            required: true,
+                            placeholder: "Write your text here",
+                            rows: 4,
+                            html: true,
+                            options: {
+                                theme: 'snow'
+                            }
                         },
                         {
                             type: 'imageChooser',

@@ -34,13 +34,13 @@
 
 <style type="text/scss">
   .hyp-tab-wrap {
-    @apply h-full overflow-y-auto;
+    @apply h-full overflow-y-auto bg-grey-lighter;
     ul.hyp-tab {
       @apply list-reset flex flex-row bg-grey-light;
       li.hyp-tab-item {
         @apply flex-1 text-center;
         a.hyp-tab-item-link {
-          @apply block py-2 no-underline text-grey-darkest;
+          @apply block py-2 no-underline text-grey-darkest font-medium text-sm;
           &:hover {
             @apply border-blue;
           }

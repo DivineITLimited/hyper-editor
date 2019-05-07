@@ -7,8 +7,12 @@
             <b-col sm='6'>{{ value.title}}</b-col>
         </b-row>
 
-        <b-btn v-b-modal="modalID" size="sm" class="hyper-btn chooser-btn" variant="outline-info">Choose Image</b-btn>
-        <b-btn @click="reset" size="sm" class="hyper-btn reset-btn" variant="default">Reset</b-btn>
+        <button v-b-modal="modalID" class="chooser-btn">
+          Choose Image
+        </button>
+        <button class="reset-btn" @click="reset">
+          Reset
+        </button>
 
         <!-- Modal Component -->
         <b-modal :id="modalID" size='lg' title="Choose Image" @ok="handleOk">
@@ -93,8 +97,13 @@ export default {
 
 
 <style lang="scss">
-.img-thumbnail.selected {
-    background: #1995b6;
-    border-color: #1995b6;
-}
+  .chooser-btn{
+    @apply bg-blue text-sm py-1 px-2 text-white rounded border;
+    &:hover{
+      @apply bg-grey-lightest text-grey-darker border-blue;
+    }
+    &:focus{
+      @apply outline-none;
+    }
+  }
 </style>

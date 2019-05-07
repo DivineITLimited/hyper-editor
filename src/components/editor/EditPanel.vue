@@ -276,20 +276,44 @@
     }
     //hyper edit panel wrap
     .hyp-edit-panel-wrap {
-      @apply h-full relative bg-white;
+      @apply h-full bg-white;
       .tabs-details {
         @apply p-3;
         .vue-form-generator {
           fieldset {
+            @apply;
+            legend {
+              @apply text-sm bg-grey-light px-2 py-1 w-full border-b border-grey text-grey-darker flex relative;
+                &:after, &:before{
+                  @apply border border-grey-darker;
+                  content: "";
+                  position: absolute;
+                  top: 11px;
+                  width: 6px;
+                }
+                &:before{
+                  transform: rotateZ(45deg);
+                  -webkit-transform: rotateZ(45deg);
+                  right: 12px;
+                }
+                &:after{
+                  transform: rotateZ(-45deg);
+                  -webkit-transform: rotateZ(-45deg);
+                  right: 8px;
+                }
+                &:hover {
+                  cursor: pointer;
+                }
+              }
             .form-group {
               label{
                 span{
-                  @apply text-grey-darker font-medium;
+                  @apply text-grey-darkest text-sm pb-1 block;
                 }
               }
               .field-wrap {
                 .form-control {
-                  @apply text-sm text-grey-darker bg-grey-lightest w-full p-2 leading-tight border rounded;
+                  @apply text-sm text-grey-darker bg-white w-full p-2 block border rounded;
                   &:focus{
                     @apply border-blue;
                   }
@@ -302,6 +326,35 @@
                 }
               }
             }
+          }
+          fieldset:first-child{
+            legend{
+              @apply rounded-t;
+            }
+          }
+          fieldset:last-child{
+           legend{
+              @apply rounded-b-sm border-b-0;
+           }
+          }
+          .willcollapse.active{
+            @apply bg-white mb-2 rounded;
+            legend{
+              @apply text-blue rounded-b-none;
+              &:after, &:before{
+                @apply border-blue;
+              }
+            }
+            .form-group{
+              @apply px-3;
+            }
+          }
+        }
+
+        //inner tab
+        .hyp-tab-wrap{
+          .hyp-tab{
+            @apply ;
           }
         }
       }
@@ -346,30 +399,9 @@
           outline: none;
         }
       }
-      legend {
-        font-size: 14px;
-        line-height: 18px;
-        font-weight: bold;
-        color: #0061cc;
-        background: #eee;
-        padding: 8px 10px;
-        margin: 0;
-        width: 100%;
-        border-bottom: 1px solid #dbdbdb;
 
-        &:hover {
-          cursor: pointer;
-        }
-      }
       .form-group {
-        label {
-          font-size: 14px;
-          font-weight: bold;
-          line-height: 18px;
-          margin-bottom: 5px;
-          display: block;
-        }
-        .field-wrap {
+      .field-wrap {
           .wrapper {
             position: relative;
             .form-control {
@@ -405,14 +437,16 @@
       @apply hidden;
     }
     fieldset.willcollapse.active div.form-group {
-      @apply block pt-2 pb-2;
+      @apply block pt-3 pb-3;
     }
+    fieldset.willcollapse.active div.form-group
 
     .ql-toolbar.ql-snow + .ql-container.ql-snow {
       position: relative;
       display: block;
       overflow: hidden;
       width: 100%;
+      background: #fff;
       .ql-editor {
         max-height: 200px;
         overflow-y: scroll;
