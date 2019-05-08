@@ -1,28 +1,28 @@
 <template>
-  <div :class="'vc-action-bar ' + (collapsed? 'forceVisible ': ' ') + (editing? 'editing': '')">
-    <div class="left-align hyp-btn-wrap">
-      <b-btn v-if="moveBtnClass" :class="moveBtnClass" title="Move">
-        <icon name="move"></icon>
-      </b-btn>
-      <b-btn v-if="createAction" @click="createAction" title="Copy">
-        <icon name="plus"></icon>
-      </b-btn>
-      <b-btn v-if="cloneAction" @click="cloneAction" title="Copy">
-        <icon name="clone"></icon>
-      </b-btn>
-      <span v-if="name" class="itemType">{{ name }}</span>
+  <div :class="'hyp-actionbar ' + (collapsed? 'forceVisible ': ' ') + (editing? 'editing': '')">
+    <div class="flex flex-row items-center align-middle">
+      <button v-if="moveBtnClass" :class="moveBtnClass" class="p-1 text-grey-dark" title="Move">
+        <icon name="move" stroke="3"></icon>
+      </button>
+      <span v-if="name" class="text-xs font-bold text-grey-dark">{{ name }}</span>
     </div>
-    <div class="right-align hyp-btn-wrap">
-      <b-btn v-if="collapseAction" @click="collapseAction">
+    <div class="hyp-actionbar-icon-panel">
+      <button v-if="createAction" @click="createAction" title="Copy">
+        <icon name="plus"></icon>
+      </button>
+      <button v-if="cloneAction" @click="cloneAction" title="Copy">
+        <icon name="clone"></icon>
+      </button>
+      <button v-if="collapseAction" @click="collapseAction">
         <icon v-if="collapsed" name="collapse-open" title="Expand"></icon>
         <icon v-else name="collapse-close" title="Collapse"></icon>
-      </b-btn>
-      <b-btn v-if="editAction" @click="editAction" title="Edit">
+      </button>
+      <button v-if="editAction" @click="editAction" title="Edit">
         <icon name="settings"></icon>
-      </b-btn>
-      <b-btn v-if="removeAction" @click="removeAction" title="Delete">
+      </button>
+      <button v-if="removeAction" @click="removeAction" title="Delete">
         <icon name="delete"></icon>
-      </b-btn>
+      </button>
     </div>
   </div>
 </template>
@@ -42,74 +42,27 @@
 </script>
 
 <style lang="scss">
-  .showControl {
-    border-color: #007bff !important;
+  .hyp-actionbar {
+    @apply hidden absolute pin-l pin-t;
   }
 
-  .showControl > .vc-action-bar:first-child {
-    visibility: visible
-  }
-  .vc-action-bar {
-    position: absolute;
-    visibility: hidden;
-    width: 200px;
-    // margin: auto;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: #007bff;
-    clear: both;
-    height: 20px;
-    z-index: 5000;
-    .hyp-btn-wrap {
-      line-height: 0;
-      padding: 2px 5px;
-      display: inline-flex;
-    }
-    b-btn {
-      line-height: 0;
-      background: none;
-      border: none;
-      margin-right: 5px;
-      i {
-        display: inline-grid;
-        vertical-align: middle;
-        svg {
-          width: 13px;
-          height: 13px;
-          color: #fff;
-        }
-      }
+  .hyp-actionbar-icon-panel {
+    @apply flex-wrap flex-row text-left w-32 text-xs bg-grey-light shadow px-2 hidden;
+
+    button {
+      @apply text-center py-1 my-2 flex-1;
       &:hover {
-        background: #007bff;
-        color: #fff;
-        cursor: pointer;
+        @apply bg-white;
       }
-    }
-    span.editing {
-      padding: 2px;
-      color: #007bff;
-      svg {
-        width: 12px;
-        height: 12px;
-      }
-    }
-    span.itemType {
-      font-size: 12px;
-      line-height: 16px;
-      color: #eee
     }
   }
 
-  .vc-action-bar.forceVisible {
-    visibility: visible !important;
-    background: #aaa;
-  }
+  .showControl {
+    @apply border border-blue;
 
-  .vc-action-bar.editing {
-    visibility: visible !important;
-    background: #007bff;
+    .hyp-actionbar {
+      @apply block;
+    }
   }
 
 </style>

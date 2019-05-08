@@ -1,7 +1,7 @@
 <template>
-  <draggable v-model="children" v-bind="{handle:'.blHandle', animation:150, group:'moveable'}">
+  <draggable v-model="children" v-bind="{ animation:150, group:'moveable'}">
 
-    <ComponentLoader v-for="child in children" :key="child.id" :name="child.type" :id="child.id" handle='blHandle'/>
+    <ComponentLoader v-for="child in children" :key="child.id" :name="child.type" :id="child.id"/>
     <div>
       <p v-if="children.length <= 0" class="hyp-nester-desc">Add A Block Here</p>
       <div class="hyp-nester-btn-wrap">
