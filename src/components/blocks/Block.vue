@@ -67,11 +67,10 @@ export default {
 
 <style lang="scss">
   .hyp-block {
-    @apply relative bg-grey-lighter border border-dashed border-grey-light;
+    @apply relative bg-grey-lighter border border-dashed border-grey-light mb-1;
     min-height: 20px;
-
     .hyp-block-wrapper{
-      @apply text-center py-4;
+      @apply text-center py-3;
     }
   }
 

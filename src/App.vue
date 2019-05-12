@@ -113,7 +113,7 @@
 <style lang="scss">
 
   .hyp-app {
-    @apply font-sans relative block h-full overflow-hidden mt-12;
+    @apply font-sans relative block h-full mt-16;
   }
 
   .hyp-topbar {

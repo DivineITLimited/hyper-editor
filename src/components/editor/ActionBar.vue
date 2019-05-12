@@ -1,27 +1,27 @@
 <template>
   <div :class="'hyp-actionbar ' + (collapsed? 'forceVisible ': ' ') + (editing? 'editing': '')">
-    <div class="flex flex-row items-center align-middle">
-      <button v-if="moveBtnClass" :class="moveBtnClass" class="p-1 text-grey-dark" title="Move">
-        <icon name="move" stroke="3"></icon>
-      </button>
-      <span v-if="name" class="text-xs font-bold text-grey-dark">{{ name }}</span>
+    <div class="hyp-block-heading">
+      <span v-if="name" class="hyp-block-name">{{ name }}</span>
     </div>
     <div class="hyp-actionbar-icon-panel">
+      <button v-if="moveBtnClass" :class="moveBtnClass" class="p-1 text-grey-light" title="Move">
+        <icon name="move" stroke="3"></icon>
+      </button>
       <button v-if="createAction" @click="createAction" title="Copy">
-        <icon name="plus"></icon>
+        <icon name="plus" stroke="3"></icon>
       </button>
       <button v-if="cloneAction" @click="cloneAction" title="Copy">
-        <icon name="clone"></icon>
+        <icon name="clone" stroke="3"></icon>
       </button>
       <button v-if="collapseAction" @click="collapseAction">
-        <icon v-if="collapsed" name="collapse-open" title="Expand"></icon>
-        <icon v-else name="collapse-close" title="Collapse"></icon>
+        <icon v-if="collapsed" name="collapse-open" stroke="3" title="Expand"></icon>
+        <icon v-else name="collapse-close" stroke="3" title="Collapse"></icon>
       </button>
       <button v-if="editAction" @click="editAction" title="Edit">
-        <icon name="settings"></icon>
+        <icon name="more-menu" stroke="3"></icon>
       </button>
       <button v-if="removeAction" @click="removeAction" title="Delete">
-        <icon name="delete"></icon>
+        <icon name="delete" stroke="3"></icon>
       </button>
     </div>
   </div>
@@ -43,23 +43,43 @@
 
 <style lang="scss">
   .hyp-actionbar {
-    @apply hidden absolute pin-l pin-t;
+    @apply absolute pin-l text-sm;
+    top: -16px;
+    z-index: 999;
+    visibility: hidden;
+    button:focus{
+      @apply outline-none;
+    }
+    button:hover{
+      @apply cursor-move;
+    }
+    .hyp-block-heading{
+      @apply flex flex-row;
+      .hyp-block-name{
+        @apply font-bold text-grey-darker capitalize;
+      }
+    }
+
+  }
+  .hyp-actionbar.forceVisible{
+    visibility: visible !important;
   }
 
+  .showControl > .hyp-actionbar:first-child {
+    visibility: visible
+  }
   .hyp-actionbar-icon-panel {
-    @apply flex-wrap flex-row text-left w-32 text-xs bg-grey-light shadow px-2 hidden;
-
+    @apply flex-wrap text-sm flex-row text-left w-auto bg-blue-lighter;
     button {
-      @apply text-center py-1 my-2 flex-1;
+      @apply text-center flex-1 p-1 text-grey-darkest;
       &:hover {
-        @apply bg-white;
+        @apply bg-blue text-white;
       }
     }
   }
 
   .showControl {
-    @apply border border-blue;
-
+    @apply border border-blue-lighter;
     .hyp-actionbar {
       @apply block;
     }

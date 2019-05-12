@@ -353,11 +353,15 @@
         //inner tab
         .hyp-tab-wrap{
           .hyp-tab{
-            @apply bg-transparent;
+            @apply bg-transparent border border-b-0;
             .hyp-tab-item{
+              @apply border-b;
               .hyp-tab-item-link{
-                @apply font-normal border py-1 px-2 text-xs;
+                @apply font-normal py-1 px-2 text-xs;
               }
+            }
+            .hyp-tab-item.is-active{
+              @apply bg-white border-b-0;
             }
           }
           .tabs-details{

@@ -3,7 +3,6 @@
 
     <ComponentLoader v-for="child in children" :key="child.id" :name="child.type" :id="child.id"/>
     <div>
-      <p v-if="children.length <= 0" class="hyp-nester-desc">Add A Block Here</p>
       <div class="hyp-nester-btn-wrap">
         <button type="button" @click="chooseBlock" class="hyp-nester-add-btn" title="Add Block">
           <icon name="plus" stroke="3"></icon>
@@ -46,18 +45,18 @@
   }
 
   .hyp-nester-btn-wrap {
-    @apply text-center mb-2;
+    @apply text-center;
   }
 
   .hyp-nester-add-btn {
-    @apply px-2 rounded bg-white shadow text-grey-darkest mt-1;
+    @apply px-2 rounded bg-blue shadow text-white;
     padding-top: .2rem;
     padding-bottom: .2rem;
     &:focus {
       @apply outline-none;
     }
     &:hover {
-      @apply bg-blue text-white;
+      @apply bg-blue-light text-white;
     }
   }
 </style>
